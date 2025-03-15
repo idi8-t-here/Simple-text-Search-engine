@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 use std::fs;
-use regex::Regex;
+use regex::bytes::Regex;
 use levenshtein::levenshtein;
 
 #[derive(Debug)]
@@ -47,40 +47,47 @@ impl UserInput {
         path.push("Dataset/output.txt");
         let hay = fs::read_to_string(&path).unwrap();
         let hay = hay.replace("\r", "");
-        let mut hashset:Vec<(u16,&str)> = Vec::new();
+        let mut hashset:Vec<(u16,String)> = Vec::new();
 
         let regex_pattern = match self.search_scope {
-            Scope::Words => r"\w+".to_string(),
-            Scope::Lines => format!(r"(?m)^.*\b{}[.,!?;:']?\b.*$", regex::escape(&self.search_term)),
+            Scope::Words => Regex::new(r"\w+"),
+            Scope::Lines => Regex::new(&format!(r"(?m)^.*\b{}[.,!?;:']?\b.*$", regex::escape(&self.search_term))),
         };
-
-        let re = Regex::new(&regex_pattern).expect("invalid regex pattern");
-        let dataset: Vec<_> = re.find_iter(&hay).map(|mat| mat.as_str()).collect();
+        
+         let dataset: Vec<_> = match regex_pattern {
+            Ok(regex_pattern) => regex_pattern.find_iter(hay.as_bytes()).filter(|mat| mat.as_bytes().len() <= match self.search_scope { Scope::Words => 1020, Scope::Lines => 131072}).map(|mat| mat.as_bytes()).collect(),
+            Err(error) => {return eprintln!("Regex compilation failed: {}", error); }
+        };
 
         match self.search_type {
             SearchType::Prefix => {
-                for value in dataset.iter() {
-                    let key = levenshtein(self.search_term.as_str().trim(),value);
-                    if value.starts_with(self.search_term.as_str().trim()) {
+                for v in dataset.iter() {
+                    let value = String::from_utf8_lossy(v).into_owned(); // Convert to owned String
+                    let search_term = self.search_term.as_str().trim();
+                    if value.starts_with(search_term) {
+                        let key = levenshtein(search_term, &value);
                         hashset.push((key as u16, value));
                     }
                 }
             }
             SearchType::Suffix => {
-                for value in dataset.iter() {
-                    let cleaned_value = value.trim_end_matches(|c: char| !c.is_alphanumeric()); // Remove trailing punctuation
+                for v in dataset.iter() {
+                    let value = String::from_utf8_lossy(v).into_owned(); // Convert to owned String
+                    let cleaned_value = value.trim_end_matches(|c: char| !c.is_alphanumeric()).to_string(); // Remove trailing punctuation
                     let search_term = self.search_term.as_str().trim();
 
                     if cleaned_value.ends_with(search_term) {
-                        let key = levenshtein(search_term, cleaned_value);
+                        let key = levenshtein(search_term, &cleaned_value);
                         hashset.push((key as u16, value));
                     }
                 }
             }
             SearchType::Contains => {
-                for value in dataset.iter() {
-                    let key = levenshtein(self.search_term.as_str().trim(),value);
-                    if value.contains(self.search_term.as_str().trim()) {
+                for v in dataset.iter() {
+                    let value = String::from_utf8_lossy(v).into_owned(); // Convert to owned String
+                    let search_term = self.search_term.as_str().trim();
+                    if value.contains(search_term) {
+                        let key = levenshtein(search_term, &value);
                         hashset.push((key as u16, value));
                     }
                 }
