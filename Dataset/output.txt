@@ -1,0 +1,4129 @@
+
+
+
+
+#pg-header div, #pg-footer div {
+    all: initial;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+#pg-footer div.agate {
+    font-size: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+#pg-footer li {
+    all: initial;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-indent: -0.6em;
+}
+#pg-footer div.secthead {
+    font-size: 110%;
+    font-weight: bold;
+}
+#pg-footer #project-gutenberg-license {
+    font-size: 110%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+#pg-header-heading {
+    all: inherit;
+    text-align: center;
+    font-size: 120%;
+    font-weight:bold;
+}
+#pg-footer-heading {
+    all: inherit;
+    text-align: center;
+    font-size: 120%;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#pg-header #pg-machine-header p {
+    text-indent: -4em;
+    margin-left: 4em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: medium
+}
+#pg-header #pg-header-authlist {
+    all: initial;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#pg-header #pg-machine-header strong {
+    font-weight: normal;
+}
+#pg-header #pg-start-separator, #pg-footer #pg-end-separator {
+    margin-bottom: 3em;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 2em;
+    text-align: center
+}
+
+    .xhtml_center {text-align: center; display: block;}
+    .xhtml_center table {
+        display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        }
+      Greek wayfarers and other poems | Project Gutenberg
+    
+
+@media screen {
+    body {
+        margin-left: 10%;
+        margin-right: 10%
+        }
+    }
+.pagedjs_page_content > div {
+    margin-left: 10%;
+    margin-right: 10%
+    }
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    clear: both
+    }
+p {
+    margin-top: 0.51em;
+    text-align: justify;
+    margin-bottom: 0.49em;
+    text-indent: 1em
+    }
+.p2 {
+    margin-top: 2em
+    }
+.p4 {
+    margin-top: 4em
+    }
+hr {
+    width: 33%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    clear: both
+    }
+hr.chap {
+    width: 65%;
+    margin-left: 17.5%;
+    margin-right: 17.5%
+    }
+@media print {
+    hr.chap {
+        display: none;
+        visibility: hidden
+        }
+    }
+div.chapter {
+    page-break-before: always
+    }
+h2.nobreak {
+    page-break-before: avoid
+    }
+table {
+    margin-left: auto;
+    margin-right: auto
+    }
+table.autotable {
+    border-collapse: collapse;
+    width: 60%
+    }
+table.autotable td, table.autotable th {
+    padding: 4px
+    }
+.x-ebookmaker table {
+    width: 95%
+    }
+.tdr {
+    text-align: right;
+    vertical-align: top
+    }
+.page {
+    width: 8em;
+    vertical-align: top
+    }
+.pagenum {
+    position: absolute;
+    left: 92%;
+    font-size: smaller;
+    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-indent: 0
+    }
+.blockquot {
+    margin-left: 5%;
+    margin-right: 5%
+    }
+.center {
+    text-align: center;
+    text-indent: 0
+    }
+.smcap {
+    font-variant: small-caps
+    }
+.poetry {
+    display: block;
+    text-align: left;
+    margin-left: 0
+    }
+@media print {
+    .poetry {
+        display: block
+        }
+    }
+.x-ebookmaker .poetry {
+    margin-left: 5%;
+    margin-right: 5%
+    }
+.poetry-container {
+    margin: 1.5em auto;
+    text-align: center;
+    font-size: 98%;
+    display: flex;
+    justify-content: center
+    }
+.poetry .stanza {
+    padding: 0.5em 0;
+    page-break-inside: avoid
+    }
+.poetry .verse {
+    text-indent: -3em;
+    padding-left: 3em
+    }
+.transnote {
+    background-color: #E6E6FA;
+    color: black;
+    font-size: smaller;
+    padding: 0.5em;
+    margin-bottom: 5em;
+    font-family: sans-serif, serif
+    }
+.xbig {
+    font-size: 2em
+    }
+.big {
+    font-size: 1.3em
+    }
+.small {
+    font-size: 0.8em
+    }
+abbr[title] {
+    text-decoration: none
+    }
+.poetry .indent0 {
+    text-indent: -3em
+    }
+.poetry .indent10 {
+    text-indent: 2em
+    }
+.poetry .indent14 {
+    text-indent: 4em
+    }
+.poetry .indent2 {
+    text-indent: -2em
+    }
+.poetry .indent33 {
+    text-indent: 13.5em
+    }
+.poetry .indent34 {
+    text-indent: 14em
+    }
+.poetry .indent4 {
+    text-indent: -1em
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Project Gutenberg eBook of Greek wayfarers, and other poems
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Greek wayfarers, and other poems
+
+Author: Edwina Stanton Babcock
+
+Release date: March 5, 2025 [eBook #75533]
+
+Language: English
+
+Original publication: New York: G. P. Putnam's Sons, 1916
+
+Credits: The Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK GREEK WAYFARERS, AND OTHER POEMS ***
+
+[Pg i]
+Greek Wayfarers
+and
+Other Poems
+
+By
+Edwina Stanton Babcock
+
+
+G. P. Putnam’s Sons
+New York and London
+The Knickerbocker Press
+1916
+
+[Pg ii]
+
+
+
+Copyright, 1916
+BY
+EDWINA STANTON BABCOCK
+
+
+
+The Knickerbocker Press, New York
+
+[Pg iii]
+
+
+
+To
+MARIÁNTHE
+
+
+[Pg v]
+
+
+The author believes that Greece today—largely because of her people’s
+opportunity in America—knows conscious renewal of her endless spirit
+while she still keeps wonder and glory for all who approach her.
+Whatever her destiny, her natural beauties have not betrayed her,
+and through her glorious wildness and barrens her people are looking
+outward and forward. Therefore, if these verse-pictures of ancient and
+modern Greek life bring to those familiar with Greece any refreshing
+memory and to those who do not know this beautiful country an awakened
+interest, they will justify their existence.
+
+
+[Pg vii]
+CONTENTS
+
+
+PAGE
+
+The Amazons at Epídauros 3
+
+The Black Sail 5
+
+Widowed Andromache 6
+
+The Sacred Ship from Delos 7
+
+The Little Shade 9
+
+The Contrast—Volo 10
+
+“She Had Reverence”—Volo 11
+
+The Glory—Good-Friday Night, Athens, 1914 12
+
+Sunset on the Acropolis 15
+
+The Street of Shoes (Athens) 16
+
+On the Eleusinian Way—Spring 18
+
+In the Room of the Funeral Stelæ (Athens
+    Museum) 20
+
+
+“The Seven-Stringed Mountain Lute”         22
+
+Greek Wayfarers 23
+
+The Threshing-Floor 30
+
+By the Wallachian Tents—Thessaly 32
+
+The Vale of Tempé 35
+
+The Encounter 37
+
+Easter Dance at Megara—First Picture 40
+
+Easter Dance at Megara—Second Picture 41
+[Pg viii]
+Peace, 1914 44
+
+Delphi 46
+
+The Descent from Delphi 49
+
+Twilight on Acro-Corinth 51
+
+Romance 53
+
+Night in Old Corinth 55
+
+Aquamarine 57
+
+The Shepherdess 60
+
+May-Day in Kalamata 63
+
+From the Arcadian Gate 66
+
+The Abbess 68
+
+Greek Farmers 70
+
+Song 73
+
+To the Olympian Hermes 75
+
+Greece—1915-1916 78
+
+The Singing Stones 80
+
+The Old Quest 83
+
+The Gods are not Gone, but Man is Blind 86
+
+The Sea of Time 87
+
+On the Thoroughfare 89
+
+At Pæstum 90
+
+Phidias—a Dramatic Episode 95
+
+Epilogue 118
+
+[Pg 1]
+
+
+[Pg 3]
+GREEK WAYFARERS
+
+
+
+TO THE AMAZONS AT EPÍDAUROS
+
+
+
+
+Ride, Amazons, ride!
+Militant women, careless of tunic and limb;
+Sinuous torsos, naked legs boy-like and pressed
+Close to the warm horse’s flank, while the wild battle-hymn
+Fixes the eyes with the far-reaching look of the quest;
+Caring no more for the places of mother and bride;
+Ride, Amazons, ride!
+
+
+Ride, Amazons, ride!
+Arrow-swift warriors galloping over the plain,
+Feverish, urged ever onward with furious rage;
+War-fretted golden-hair tangled with wind-fretted mane;
+One-breasted heroines, vigorous, quick to engage,
+Hot with the vigor of pulsating, vehement pride—
+Ride, Amazons, ride!
+
+
+Ride, Amazons, ride!
+Penthesilèa falls by Achilles’ drawn bow.
+Fell she, the Queen, by the white tents of bold Priam’s side?[Pg 4]
+Leaderless women, on to the battle ye go—
+Plunging on, speeding on; galloping Vengeance, astride
+Horses that feel ye victorious, with gods allied—
+Ride, Amazons, ride!
+
+
+Ride, Amazons, ride!
+Fearless stone-women, ardent and flushed with the race,
+Gleaming like swords, ruthless of body and breast;
+Nothing shall utterly quell ye, nor wholly deface,
+Ye shall ride onward forever, on ultimate quest.
+Spirited! Splendid! Time shall not turn ye aside.
+Ride, Amazons, ride!
+
+
+
+
+
+[Pg 5]
+THE BLACK SAIL
+
+
+
+
+How did it seem, that warm thyme-scented day
+When emerald figs hung swelling in the dark
+Rose-nippled glooms of laurel and of bay,
+And pomegranate flowers burned their spark
+Through cypresses, to wait ’neath temple frieze,
+Scanning the hermless highways of the seas,
+
+
+Watching for one white canvas far away,
+And when the morning seemed to grow so late,
+Going, amaracus and grapes to lay
+With reeds and gums on Nike’s stylobate,
+Muttering: “’Tis the Day—he cannot fail!”
+Then on a sudden, seeing—the black sail!
+
+
+
+
+
+[Pg 6]
+WIDOWED ANDROMACHE
+
+
+
+
+“Full in the morning sun I saw him first
+And followed him through meadows, flower-massed,
+All his steep, toilsome ways, I, too, traversed;
+After his battles all his wounds I nursed,
+From our tent gazing to the cities passed.
+
+
+“Then, to the Trojan walls, where battle burned
+And every altar had a bloody rim,
+I trod his ardent footsteps, though I yearned
+For fields so free; but until back he turned
+My only way was onward, after him.
+
+
+“The summons came while I was following, true,
+Eager, alert, though bruised by thorn and stone.
+Had he but paused to tell me, ere he drew
+His cloak about him, what I was to do,
+I would have kept the path, yea, all alone!
+
+
+“But he was silent, answering not my woe.
+He muffled him against my prayers and tears.
+I raise my arms, hung with the links of years,
+Hung with his broken chains, my right to show
+But—o’er his Unknown Paths, I may not go!”
+
+
+
+
+
+[Pg 7]
+THE SACRED SHIP FROM DELOS
+
+(The Pilot speaks)
+
+
+
+“Strange, how I felt the homeward voyage long;
+As I looked back to Delos o’er our wake,
+And heard the priest’s song, saw our sails out-shake
+Under the round sun hanging like a gong
+Mid-heaven. All night long I lay on deck
+Remembering how he taught us in the Porch;
+Yet, the black waters’ phosphorescent torch
+Gave me no Sign, no word in white foam-fleck.
+
+
+“When we passed Sunion, methought I saw
+Red fires burning ’mid the holy white
+Of sacred columns; but the Athenian law
+I did not know! And then, the reef’s long jaw
+Foamed at us. Through the hollow night
+We fared, unwitting; putting forth our might;
+Speeding with oars our fated way upon,
+Till the white Dawn ensilvered Phaleron.
+
+
+“At the Piræus, when I saw the throng,—
+Crito and Phædo, there, to meet us,—I
+Gave myself no portentous reason why,[Pg 8]
+But thought: ‘He’s free!’ (Forsooth he did no wrong)
+Then I remembered lofty words he said
+Of freedom as its dangerous truth he read,—
+Great Zeus! The cowards might as well indict
+Sea-circled priest or mountain anchorite!
+
+
+“Crito it was who told me, voice all raw
+With grief, and on my shoulder his kind hand:
+He saw me flinch,—‘Tremblest?’ he said, ‘Nay, stand
+Here in the shadow. ’Twas thy ship they saw,
+The Sacred ship from Delos, ere they gave
+The signal for the hemlock—and his grave!
+He drank the cup: the while, methought, thy prow
+Would have steered Hades-ward, didst thou but know.’
+
+
+“I made no sign. No trite word left my lip.
+I turned from Crito, and saw Phædo, grave,
+Join him. Alone, I went back to my ship,
+Sails furled with garlands riding harbor-wave;
+I looked at her, rehearsed the sacred rite,
+And purified me; set my torch alight:
+‘Socrates! Master!’ I sobbed once; set then
+Aflame the Sacred Ship of Ill-Omen!”
+
+
+
+
+
+[Pg 9]
+THE LITTLE SHADE
+
+
+
+
+No longer that grey visage fix,
+Charon,
+Asking me how I come to mix
+With this pale boat-load on the Styx,
+Charon.
+
+
+I am so very small a Shade,
+Charon,
+Holding the vase my father made
+And toys of silver all inlaid,
+Charon.
+
+
+Ferry me to the golden trees,
+Charon,
+To isles of childish play and ease
+And baths of dove-like Pleiades,
+Charon.
+
+
+Ferry me to the azure lands,
+Charon,
+Where some dead mother understands
+The lifting of my baby hands,
+Charon.
+
+
+
+
+
+[Pg 10]
+THE CONTRAST
+
+
+“Neither my Magnesian home, nor Demetrias, my happy country mourned
+for me, the son of Sotimos; nor did my mother Soso lament me,—for no
+weakling did I march against my foes.”—From a painted stele at
+Volo, Thessaly.
+
+
+
+
+’Tis said, when young Greeks went to die,
+Greek mothers would not weep;
+And steadfast mien and tearless eye
+Controlled themselves to keep.
+
+
+Ah!—they were trained to bloody deed;
+We—in this time so late
+That life seemed gentle, know our breed
+More tragically great!
+
+
+Had we foreseen, no tear would fall.
+Now mothers, too, could smile ...
+Only, we proved men brave ... and dead
+In such a little while!
+
+
+
+
+
+[Pg 11]
+“SHE HAD REVERENCE”
+
+
+“O Rhadamanthos, or O Minos, if you have judged any other woman as
+of surpassing worth, so also judge this young wife of Aristomachos
+and take her to the Islands of the Blessèd. For she had reverence for
+the gods and a sense of justice sitting in council with her. Talisos,
+a Cretan city, reared her and this same earth enfolds her dead; thy
+fate, O Archidíke!”—From a painted stele in the Museum at Volo.
+
+
+
+
+The dear dead women Browning drew
+Lean forth in happy watchfulness;
+With them Rossetti’s Starry-tress:
+And Tennyson’s royal maidens press
+To bring you to their Sacred Few.
+Lovely companions wait for you,
+Dear Archidíke, wife divine,
+With asphodels your locks to twine;
+Thus crowning with celestial vine
+That noble reverence you knew!
+
+
+
+
+
+[Pg 12]
+THE GLORY
+
+Good Friday Night, Athens, 1914.
+
+
+
+Myriad candles windy flaring
+Over faces stilled in prayer;
+Silken banners, icon-bearing,
+Jewelled vestments, laces rare—
+All the people in a daze,
+Walking in a candle-haze,
+Of uplifted pure amaze.
+All the people in a stream,
+Crowding in an Easter dream;
+While choragic song
+Pours from out the throng—
+“It is the Glory—holy holiday.”
+So, smiling, good Athenians say.
+
+
+Priests in choir, softly singing,
+Carry the Pantokrator,
+While the city-bells are ringing
+In their wild two-toned uproar;
+All the people, in a mass,
+With the purple-robed Papas,
+Bearing crosses made of brass,[Pg 13]
+Scarlet cap, and fustanelle,
+Turkish fez, and bead, and bell,
+While choragic song
+Leads the trancèd throng.
+“It is the Glory—holy holiday,”
+So, smiling, good Athenians say.
+
+
+Colored lights, and dripping torches,
+Burn on Lykabettos crags;
+In the narrow streets and porches
+Whole-sheep roasting never flags.
+Bonfires all the country light,
+Up to dark Hymettus’ height,
+Making all the hillsides bright.
+Still the surging crowds advance,
+Moving, moving in a trance;
+While choragic song
+Leads the trancèd throng.
+“It is the Glory—holy holiday,”
+So, smiling, good Athenians say.
+
+
+In their wistful majesty,
+See them waiting for a sign,
+Of religious unity
+From the human or divine;
+Faithful, yearning, poor, uncouth,
+Pagan-born, yet craving truth—
+Old grey-heads and stripling youth.
+All the people in a stream,
+Holding candles in a dream,[Pg 14]
+While choragic song
+Swells throughout the throng.
+“It is the Glory—holy holiday,”
+This, smiling, good Athenians say.
+
+
+
+
+
+[Pg 15]
+SUNSET ON THE ACROPOLIS
+
+
+
+
+If ever I have freed me of all time,
+Let me so free me now, that I have brought me
+Near to these hill-top temples, which have caught me
+Up to their soaring heights and Vision wrought me
+Of things serene, and stricken, and sublime.
+
+
+Let me, the titled, spurious Christian, face
+This solemn wistfulness of Pagan yearning—
+This aspiration of white columns, burning
+With golden fires, their pillars deep inurning
+The tragic, sunset beauty of the place.
+
+
+Let me stand silent, under evening skies,
+Watching this radiance grown cold and hoary;
+In death-white, black-stained ruins, read the story
+The Parthenon tells of ancient Grecian glory,
+Reiterating beauty as it dies.
+
+
+Let me stand silently and humbly, there,
+Seeking that Unknown God Greeks apprehended;
+That, as the temples fade, and day is ended,
+My own hope with this ancient faith be blended,
+And I be part of this eternal prayer!
+
+
+
+
+
+[Pg 16]
+THE STREET OF SHOES
+
+(Athens)
+
+
+
+Now, while the Bulgars creep in stealthy crews
+To Macedonian borders, do they stay
+In Athens as they were one April day—
+The busy cobblers in “The Street of Shoes”?
+
+
+I wonder: for the faces leaning there,
+Had Oriental heat, the hands that sewed
+Had look of readiness; some skillful code
+The hammers rapped on leather-scented air.
+
+
+The old shoemakers, hung about with hide
+In cave-like booths, with beads and fringe adrip,
+Muttered their restless words beneath the clip
+Of shoe-laces, or hammered, sombre-eyed;
+
+
+Red-capped, white-bearded, keen for petty strife,
+They hammered and they stitched; while, might and main
+Down their small, narrow, red-morocco lane,
+They cut the scarlet shoes with gleaming knife.
+
+
+How would it go, if mad Bulgarian hordes
+Invaded here with pillage and abuse?
+I like to think that in the Street of Shoes
+Those old, gnarled hands would fiercely leap to swords![Pg 17]
+
+
+I love to think how fiery faces there
+Would light like lurid skies before the storm,
+And that Athenian shoemakers would swarm
+To guard the city with ferocious care.
+
+
+Then, if the foe to trample Athens choose,
+I pity them if those Greek cobblers still
+Stick to their lasts. These would not wait to spill
+A brighter red than red-morocco shoes!
+
+
+Bulgars would know how nimble fingers use
+Flayed skin to keep the needles very bright;
+They would learn much before they took their flight
+Forever from the valiant Street of Shoes!
+
+
+
+
+
+[Pg 18]
+ON THE ELEUSINIAN WAY—SPRING
+
+
+
+
+Hush! Walk slowly;
+All this winding road is holy;
+Place your votive image in a niche
+By Pass of Daphne, where rocks forward pitch.
+Now, sit lowly—
+Under dim firs that cool the dust-white way
+Curving from Athens to Eleusis Bay.
+
+
+Soft! Speak lightly!
+See’st this myriad Concourse? all the sprightly
+Luminous Mystæ? Naked flower forms
+Dancing in close commingled color-swarms
+So brightly?
+Follow them in their green-hot Mænad flame,
+Their sweet mysterious rapture of no name.
+
+
+Watch! Far-seeing
+Demeter’s yellow torches fitful fleeing.
+And seed processions moving towards the shrine
+Where motion, moisture, act in soft sunshine;
+And being
+Earth-taught, flower-figures of desire
+Sway toward white Oreads quick with fire.[Pg 19]
+
+
+Take, unceasing
+Joy of powers these Mystæ are releasing
+Eternal, they, who seem so lovely-brief.
+Soft luminous shapes of petal and of leaf
+Increasing,
+They sweep across Semele’s ancient fields
+Handing the torch the calm Earth-mother yields.
+
+
+Yea—the senses
+Have their holy truths and recompenses
+Sweetly simple may their teachings be
+“Wine flashing clusters from a sacred tree”;
+Defences
+From all our sorry wisdoms have these flowers
+Who teach deep truths with Dionysiac powers!
+
+
+
+
+
+[Pg 20]
+IN THE ROOM OF THE FUNERAL STELÆ
+
+(Athens Museum)
+
+
+
+O’er all the world I wandered with my grief,
+My human grief, that would not be forgot,
+Finding no face, no word, nor any spot
+Where haunted heart and brain could find relief.
+
+
+Until the morning I unwitting stept
+Into the stelæ-halls and the great peace
+Of the Greek sorrow over Life’s surcease
+Enveloped me, even in woe inept.
+
+
+Here, marble love in simple human sense
+To nearest friend gives earthly treasure up,
+A matron handing maid a box or cup;
+A man from dog and slave turning him hence;
+
+
+A soldier springing out into the dark;
+A wife slow fading in her husband’s arms;
+The inexorable Fact, its vague alarms
+And Love grown suddenly aloof and stark!
+
+
+Yet no breast-beating here, nor frantic woe,
+Nor bitter tears, nor loud outcry of pain.
+Only the question: “Will they live again?
+Go they forever from us, when they go?”[Pg 21]
+
+
+Majestic sorrowers the figures stand,
+Absorbed in contemplation of One Thing ...
+No promises, nor priestly counselling,
+Only the longing eyes and clasping hand!
+
+
+Down the long halls I wandered; Athens’ Spring
+Radiant without, with almonds’ rosy spray,
+And violets crowding on the hills. That day
+My dead heart stirred to marble comforting!
+
+
+For the Greeks knew! Death is the only thing
+That keeps its dignity. So Death they met
+Ready to pay to him a subject’s debt;
+Going out awe-struck as to meet a King.
+
+
+The Greeks knew! nothing any more can heal
+The heart Death once despoils of sorrowing.
+With proud simplicity they felt the sting,
+Then wore the mystery like sacred seal!
+
+
+Calm-eyed, controlled, those marble figures gaze
+Into the depths no mortal eyes have known,
+Then, Grecian head thrown back, the world is shown
+Sorrow’s transfigured face, immortal ways!
+
+
+
+
+
+[Pg 22]
+“THE SEVEN-STRINGED MOUNTAIN LUTE”
+
+
+“Homer, Sappho, Anacreon, Pindar, Æschylus, Sophocles, Euripides, the
+very names are a song.”—M. C. M.
+
+
+
+
+I knew, no matter how they plucked at me
+Like golden fingers—all those cadenced names—
+That never could I answer; for the power
+Of their majestic harmonies was perfect flower.
+No greater song, nor lovelier verse could be
+Unless Greece lived another golden hour.
+I tried to echo them. I vainly sought
+Timid expression of their rhythmic fire;
+My melodies with halting effort caught
+Faintly their classic motive and desire.
+Yet, while I failed, a miracle was wrought,
+Themselves did sing! Thus, humble, I was taught
+These names that are the plectrum and the lyre.
+
+
+
+
+
+[Pg 23]
+GREEK WAYFARERS
+
+I
+
+
+
+Around the Hellenic coast the dark-blue bands
+Of circling waters, like a loin-cloth, wind
+The stalwart nakedness of seaward lands;
+Bronze crag, and beach, and rock and terrace bind
+As foreground for the somber swelling tent
+Of purple mountain. On the morning sky
+Pale azure summits, with their sides snow-rent,
+Loom in the distance; slowly, solemnly,
+The coasts of Greece define; their misty chains
+Backed by soft clouds and silver sky-moraines.
+While we sail on, reverent vision-sharers,
+To read the romance of the Greek Wayfarers!
+
+
+
+II
+
+
+
+Those serrate ridges toward the southward brew
+Grape-colored mist, snow-frothed; the foamy crest
+Of Mount Taÿgetos bursts on the blue
+Peloponnesian pinnacles, repressed[Pg 24]
+Back of fair bays and coasts. Rich lands of corn,
+“Slopes that the Spartans loved,” the Headlands Three
+Hide from the eye; but nearer shores forlorn
+Wounded and Ancient, scarred of rock and tree
+Looming beyond the starry-clustered Isles,
+Where fire-blue waters surge on circled strand,
+Lead to far cliffs, which once were beacon-bearers
+In early wars, for early Greek Wayfarers.
+
+
+
+III
+
+
+
+Each azure-rippled, rock-encrusted beach
+Tells of the dusky, strong Phœnician sails
+That came from Sidon, passed the stormy reach,
+And touched at islands, dark as wave-tossed bales
+Left floating in the murex-stainèd sea
+Where restless fishers, full of dawning schemes
+Cruised in the tunny waters; sailing free,
+Drawn by the Tyrian Purple to new dreams.
+Adventurers, traders, heard the sailor-boasts
+Of civilized beginnings on the coasts,
+And in black vessels brought the new Space-Darers
+Whose reckless sea-paths made them Greek Wayfarers!
+
+
+
+[Pg 25]
+IV
+
+
+
+Thus rovers came, and dark-skinned traders planned
+New villages by fertile pasture lures
+In lonely valleys; by succeeding hands
+Minoan vases, Mycenean ewers
+Were fashioned; then the tribes fought hill by hill,
+And coast by coast, for wealth, till Knossos’ tombs
+And Tiryns’ palaces had dawning skill
+Of goldsmith and of craftsman in their glooms.
+The legends grew, the wooden statues raised
+New, mystic Cults. Where rams and young kids grazed
+Distaffs sprang up, and primitive sheep-shearers
+Brought snowy fleece to clothe the Greek Wayfarers.
+
+
+
+V
+
+
+
+Delphi, Eleusis, guided human awe
+By mystic voices and by legend thrill;
+Then, one by one, came templed porch and floor
+Gleaming by sea or on some fir-crowned hill.
+Far back in forest, or on Islands, rose
+Transcendent loveliness of chiselled stone,
+And in the secret shrine Artemis chose
+To hear, or not to hear, the victim’s moan.[Pg 26]
+The entrails burned; worshippers at the feet
+Of Gold-Apollo knew the saving-sweet
+Comfort of God-in-life, evolved from terrors
+Of Nature-forces by the Greek Wayfarers.
+
+
+
+VI
+
+
+
+And then the restless ichor in Greek veins
+Created dreams of new posterity,
+And mother-cities planning greater gains
+Sent emigrants exploring on the sea.
+Before Ionians, strange Æolians went.
+To Chalcedon came “œkist” altar-fire;
+Silver, and iron, and flax, for commerce sent
+Dorians roving with renewed desire;
+And coins and woolens, pottery and dyes,
+Marked with age-seal each eager new emprise;
+And shrines and temples followed all the eras
+Of settled colonies of Greek Wayfarers.
+
+
+
+VII
+
+
+
+To vale and coppice, every forest place,
+Came note of Syrinx and the sound of flutes;
+And golden ball and pomegranate trace
+On priestly robes; and ’mid the cool volutes
+Were public treasures heaped; the Councils met;
+Athens and Corinth grew to haughty names,
+And glorious youths and lovely boys were set
+To daring deeds at the Olympic Games.[Pg 27]
+By mountain paths and solitudes they trod,
+They set the votive offerings to their god
+Invoking glory—happy olive-wearers—
+Consciously beautiful, as Greek Wayfarers.
+
+
+
+VIII
+
+
+
+Then sculptors wrought and painters ground the crude
+Colors, and potters found the yellowish glaze;
+And out of Cretan bowls and bottles rude
+Came polychrome and monographic vase.
+The echoing, marble theatres curved in hills,
+Where master-voices, with dramatic art,
+Chorused all joys and passions, and all ills—
+And touched with deep emotion every heart,
+Till poet-minds flowered to richer truth;
+Forsaking earlier thoughts and laws uncouth,
+With nobler aim to be the way-preparers
+Of philosophic thought for Greek Wayfarers.
+
+
+
+IX
+
+
+
+While every river mothered daughters fair,
+And clouds conceived, and ancient trees enslaved
+Satyr and hama-dryad ... then the flare
+Of the Greek torch too happy-high was waved—
+The jealous East was plotting, Persians lay
+In plundering splendor, with their blazing hosts,
+Till Marathon and grim Thermopylæ....
+Then, envious cities, roused at Athens’ boasts[Pg 28]
+Of glittering power, crushed the Golden Age.
+Under the Spartan and Bœotian rage;
+“Leagues” and sea-struggles, Macedonian terrors,
+Dragged to a desperate pass the Greek Wayfarers.
+
+
+
+X
+
+
+
+Yet after Byzantine and Ottoman
+Settled despotic heel upon the land,
+No cruel Venetian yoke nor Turkish ban
+Forced the brave Greeks’ unconquerable stand.
+Outsiders saw the Cause inviolate,
+Byron’s hot poet’s heart and cosmic brain
+Urged on the struggle, to once more create
+An independent Greece, unchained again.
+The whole world watched the piteous battle fought,
+And hailed small triumphs, passionately bought
+With faith, until, from wild, despairing errors,
+The struggling Greeks once more were Greek Wayfarers.
+
+
+
+XI
+
+
+
+Now on Greek highways, where the wagons roll,
+Piled high with wineskins, or with bags of flour,
+Past schools and churches and the fountain bowl,
+New hope springs in the peasants hour by hour.[Pg 29]
+Greeks know that through their sordid modern strife
+They walk in poetry, believing well
+They are the children of enchanted life,
+That sends them forward messages to tell
+Of Greek restraint and hospitality,
+Greek love of beauty, and Greek dignity,
+Making them, in their toil, devoted carers
+For new and better goals for Greek Wayfarers.
+
+
+
+XII
+
+
+
+What are the goals to be, and what the gain?
+As soldiers camp in valley and on hill
+Do Spartan youths leap on the dusty plain?
+Does spirit of Leonidas keep still
+One death-defying purpose? Will the blood
+Leap of a sudden out of the Soros,
+And Marathon with bright phalanxes flood?
+Do all Greeks bear the title agathos?
+Ah, Greece! Ah, Greece! dare for the precious Past,
+And throw your lot with gallant men that cast
+Eternal die, to be the Spirit-Bearers
+For all the world and all the Greek Wayfarers.
+
+
+
+
+
+[Pg 30]
+THE THRESHING-FLOOR
+
+
+“This mess of hard-kneaded barley-bread and a libation mixed in a
+little cup.”—Greek Anthology.
+
+
+
+
+There’s a white stone-paven floor
+Set in a jade-green field
+Where the spiked acacias yield
+A shadow, and the four
+Earthen pots on a round well-wheel
+Come up drippingly full and spill
+Where the white horse runs his circle round
+Drawing water for garden ground.
+
+
+The white foundation here
+Has ne’er held temple-plinth,
+But mint and terebinth
+Perfume is in the air.
+And here, at the harvest-time the wains
+Rattle along the sunburnt plains,
+And the peasant’s arms are bared to thresh
+Food from the golden barley mesh.
+
+
+Before the morning’s long
+Comes drowsy, sliding snatch
+Of primitive threshing-song;
+Down in the garden patch[Pg 31]
+The murmurous sleepy drone of bees
+Blends with the stir of the poplar-trees,
+And the rustle of bundled grain
+Tossed from the wagon train.
+
+
+Ah! the Mavrodaphne wine
+Is fruity and sweet to taste,
+And the oranges are fine
+And the blocked Loukoúmi paste.
+But I long for a crust of peasant bread
+Eaten with honey from Parnes’ head,
+And I hunger the more and more
+At sight of the threshing-floor!
+
+
+
+
+
+[Pg 32]
+BY THE WALLACHIAN TENTS
+
+THE BOY
+
+
+
+Over dripping washing-trough
+Bends my mother busy drubbing,
+Father’s fustanella rubbing
+With the dark soap, smeary—rough.
+There my goats go, wild careering
+From the sound of wagons, nearing.
+Oootz—Ella—Whooff—!
+Out of there, you silly kid,
+By the old soup-kettle hid.
+
+
+
+THE MOTHER
+
+
+
+That boy, lying in the thyme,
+Sheepskinned loafer in the grasses,
+He is carelessness sublime,
+Sunned in yellow iris masses.
+Thinks he of the dead men sleeping
+Far away from flocks he’s keeping,
+Piled in bloody mountain-passes?
+With the brutal guns again
+Booming: “Give us men! More men!”
+
+
+
+[Pg 33]
+THE BOY
+
+
+
+Baby hanging from the tree,
+Peeps from out his bright bag-hollows,
+While the white dog rolls and wallows
+Bitten by an angry bee.
+Forth for those sheep he must sally,
+Where they by the cold brook dally.
+Oootz—Ella—Deee!—
+Now the fools, in silly mass,
+Scamper toward the mountain-pass.
+
+
+
+THE MOTHER
+
+
+
+Far off, on the dusty plain,
+Reels my drunk Wallachian,
+Coming up from town again.
+Drinking in the village khan,
+All our Balkan coin he’s spending;
+As his stupid way he’s wending
+I the future scan.
+Ugh! I hear those guns again
+Surly—growling: “Men! More men!”
+
+
+
+THE BOY
+
+
+
+Swift the smooth Peneios flows
+Smoky-white to sea’s blue gleaming.
+Where the battleships are steaming
+Ready for their foes,[Pg 34]
+I should like to fight and bear me
+Fiercely. Nothing there would scare me.
+Ella—Ella—Pros!
+With this high-swung shepherd-stick
+That old bucking ram I’ll hit!
+
+
+
+THE MOTHER
+
+
+
+St. Spiridion! He beats
+That old ram as ’t were his woman!
+What a fine, big, brawny human
+Have I suckled at these teats!
+Ah! I have my mother-reasons
+To distrust Rumanian treasons,
+When our Council meets.
+Bah! those dirty guns again
+Booming: “Give us men! More men!”
+
+
+When my man comes, o’er and o’er
+I will bluster—Not will hunger
+Nor your beatings make me monger
+Sons to angry war.
+That brown boy, in sunshine dreaming,
+I’ll not feed him to the teeming
+Snorting cannon-maw!
+Move we now our tents again,
+Far from guns that roar: “More men!”
+
+
+
+
+
+[Pg 35]
+THE VALE OF TEMPÉ
+
+
+
+
+The river that winds through the Vale of Tempé is white,
+Smokily white, like water opaque with a charm,
+Olympus knows why. He towers there, frostily bright,
+And Ossa forth stretches a slaty, precipice arm,—
+Deepening silvery pools into green-clouded light,—
+So that Tempé is hidden and secret and free from alarm.
+
+
+But the green Vale of Tempé leads forth to the stir of the Sea
+Where the battleships growl and where Salonica is held
+Fast in the grip of the Powers, who fight for the key
+Unlocking the Border-doors; if Tempé were shelled,
+Then the white Peneios, veiled as for bridal, would be
+Scarlet with blood of soldiers, like forests felled.[Pg 36]
+
+
+Pindar, Spenser, Shelley, Byron,—ye bards—
+Lyric-tongued all! What if the fair Tempé glade,
+Where delicate flowers gleam on the virginal swards
+And the cuckoo pipes to the shy-footed dryad-maid
+And the trees hide Daphne,—What if the horror-mad hordes
+Trample this Pastoral, where old Mythology stayed?
+
+
+They answer not and the soft Peneios is veiled,
+’Mid the joy of the fauns and flowers and river-born shade.
+But an old Belief in the smoky-white water is trailed—
+Who knows but Apollo, fierce for his pagan glade—
+Will hasten, haughtily, in shining sun-armor mailed,
+And carry it off to the Greek gods’ ambuscade?
+
+
+
+
+
+[Pg 37]
+THE ENCOUNTER
+
+
+
+
+’Twas there in Tempé that he lay
+Under a plane-tree, fast asleep,
+His pipes far-flung.—Pan! growing gray;
+Lines on his mocking face; his gay
+Scuffling hoofs forgot to leap.
+
+
+The river pleaded, “Wake the God”;
+The birds sat by with soft aside;
+Up from the delicate spring-sod
+I saw the eager flowers nod,
+And little leaves my language tried.
+
+
+I woke Pan. Bore the deep earth-gaze
+On my false being, false to life
+By all the dreary modern ways:
+“Pan,” I dared whisper—“long the days—
+One needs thy music in the Strife.
+
+
+“Full many a spring when poppies fired
+This brook-side, did I play for you.”
+Pan answered me: “My music tired,
+For colder music you desired;
+So be it—I am weary too!”[Pg 38]
+
+
+“Forgive me for my sad unworth,
+Oh, patient Pan,” I murmured low.
+“I know that I have failed the earth;
+Only, perhaps, by spirit-birth,
+My children thy wild pipes will know.”
+
+
+Pan frowned: “Nay, all the world doth rave;
+Against the Pipe; they rant, like you!
+Go, people my deserted cave
+With theories and books. Zeus save
+That I should hinder what you do!”
+
+
+Far back in Tempé’s leafy glade
+The dappled sunshine filtered through,
+And dewdrops opalled every blade.
+I was not of the god afraid.—
+And still there was a thing to do.
+
+
+“Ah, Pan, dear Pan,” I softly cried,
+“Who is it that shall save but thee?
+Thy music, god, the whole world wide,
+Is listened for on country-side,
+And every dreamer bows the knee!
+
+
+“By musky grapes in rosy hands,
+And all the golden fruits that glow,
+A happy lover understands
+Thy fluting, hearts in sober lands
+Languish till they thy clear pipe know![Pg 39]
+
+
+“Ah, Pan—play on! Forgive the souls
+Whom knowledge cheats of love; forgive
+That life exacts its bitter tolls
+And leads to artificial goals.
+Oh! Play! that we may surelier live!”
+
+
+I bent, I touched the shaggy hoof,
+The horns; I looked into the eyes
+Clear as rock pools, and yet aloof
+Like wild bird’s, then I saw the proof
+That Pan is kind beyond surmise.
+
+
+Tears! In Pan’s eyes!—I sprang away
+(Not even Pan should see me weep)—
+Yet on through Tempé, all that day
+I heard wild, happy piping.—Yea,
+I wakened Pan!—He’s not asleep!
+
+
+
+
+
+[Pg 40]
+EASTER DANCE AT MEGARA
+
+FIRST PICTURE
+
+
+
+Green lizards flash along the walls
+Curd-white against the fire-blue bay;
+The pepper-trees’ fern branches sway
+Their delicate, hot, scarlet balls.
+
+
+The linkèd maidens wreathe the square,
+Blazing with festal coinage, hung
+On brown necks; yellow kerchiefs, flung
+O’er dusky, long, twin braids of hair.
+
+
+The Attic maids, with Attic mirth
+Subdued and shy, from hill and plain,
+On Easter holiday, at birth
+Of spring, weave altar-pacèd chain.
+
+
+And sing a song, to shepherd flute,
+Its shifting, three-toned lilt is cold,
+Only—it is so very old,
+The wonder is it is not mute.
+
+
+But so, they say, did maidens dance
+In dim Eleusis, near the shrine.
+And that is why these dark eyes shine
+With classic-cultured ignorance.[Pg 41]
+
+
+And that is why, from near and far,
+Greek peasants come with stately pride,
+They know that Past from which they glide
+Into the dance at Megara!
+
+
+
+SECOND PICTURE
+
+
+
+In his long smock, and farmer’s cotton cap,
+Demetri dances.
+The old crones smile, the little children clap,
+The young girls’ glances
+Follow him, tall and grave, and deep of eye,
+Marvelling at him, yet aloof and shy;
+His fellow-dancers jostle roughly by
+With rude askances.
+
+
+The piper plays his reediest, shrillest tune,
+And at his leisure
+Demetri, as though pacing in a rune,
+Treads out a measure.
+The elders laugh: “Dance there, fantastic fellow!
+Tread down the grapes, while harvest moon is mellow,
+Give thy feet wings, fly o’er the sunset billow
+At thy good pleasure!”
+
+
+The little glasses of brown resin-wine
+Are quaffed; beads slipping
+Through the Greek fingers, slender, brown, and fine,
+Accent his skipping.[Pg 42]
+They nudge, to see his hand curve on his shoulder,
+They marvel as his dark eyes burn and smoulder,
+And note his step less vague, his bearing bolder,
+And go on sipping.
+
+
+Around him dance the peasants, pacing slow
+With rhythmic swinging,
+But in and out he threads their simple show
+’Midst childish singing.
+Reels past old bearded Greeks, their grave tales weaving,
+And fierce Wallachians come for Easter thieving;
+Albanian women with bold bosoms heaving
+To children clinging.
+
+
+Spell-bound, all watch him reel, and swerve, and bend;
+His dizzy spinning
+Dazzles their eyes. Word goes from friend to friend:
+“He is beginning!”
+For now with somber eyes, unveiled and burning,
+From peasant dance they see Demetri turning
+To an old trance of rapturous discerning—
+Loud plaudits winning.[Pg 43]
+
+
+The sun shines paler on the kerchief’s gold,
+The church-bell’s tolling;
+The sea grows purple, and the distance cold,
+With dark waves rolling.
+The long lines break, the black-haired maidens wrangle;
+With exclamation all the dusty tangle
+Comes to a halt, ’mid glint of peasant spangle
+And soft song trolling.
+
+
+But tall Demetri lost in dreaming pace
+In solemn swaying,
+Keeps on alone, with tense and mystic face
+As he were praying.
+With hand upraised, as holding the caduceus,
+He looks away to old far-off Eleusis,
+Devising Dionysiac curves and nooses,
+Old Laws obeying.
+
+
+Why, in his face that mystic peering gaze
+Like a faun, waiting?
+Why does he pace his lonely, occult ways
+His eyes dilating?
+“Demetri!” “Mitchu!” tease the girls. Their screaming
+He does not hear, lost in far other seeming,
+In strange dance-spell, in old blood-tutored dreaming,
+Old rhythms creating.
+
+
+
+
+
+[Pg 44]
+PEACE, 1914
+
+
+
+
+Why do the women walk so free and strong
+In Thessaly?
+It is because the Turks wreak no more wrong;
+The Balkans ended, sunburnt soldiers throng,
+In Thessaly.
+
+
+Why do the old monks pray so hard for rain
+In Thessaly?
+It is because the mountain slopes again
+Roll in green terraces of silver grain,
+In Thessaly.
+
+
+Why does the shepherd wear a broidered shirt
+In Thessaly?
+Because ’tis peace; clean is the goat-herd’s skirt,
+The women spin; the needles are alert,
+In Thessaly.
+
+
+And why the young kids, white as snowy curds,
+In Thessaly?
+The farmers are successful with their herds;
+The highway’s loud with guttural teamster-words,
+In Thessaly.[Pg 45]
+
+
+Why are the threshing-floors so thickly set
+In Thessaly?
+Because, when harvest comes, and youth is met,
+Comes the old will of Nature, sturdy yet,
+In Thessaly.
+
+
+And these deserted hovels that we see
+In Thessaly,
+Where the Peneios winds about the tree?
+The villagers have gone across the sea
+From Thessaly.
+
+
+And this trim town of plaster and of thatch
+In Thessaly?
+America hangs fortune on the latch,
+Our sons come back, then blooms the garden patch,
+In Thessaly!
+
+
+Then, this is no decadent race I see
+In Thessaly?
+Oh, stranger, who can tell? Hard things must be.
+Only, the “Greeks were Greeks,” and Greeks are we
+In Thessaly.
+
+
+
+
+
+[Pg 46]
+DELPHI
+
+
+
+
+Matrixed ’mid purple mountain steeps,
+An ancient Grecian city sleeps.
+Where rock-hewn fountains spill
+Down scarlet-poppied hill;
+Long time ago its temples fair
+Rose, Doric-columned, on the air,
+And voices told of riddles strange
+That echoed down the mountain range;
+And men and cities brought their all
+To Delphi and the priestess’ thrall.
+While in the mountain-pass a pipe
+Played on and on and on—
+A pipe played on.
+
+
+Now up the aisles of olive-trees
+Come wistful souls from over-seas,
+From the Itean shore,
+Past rose-hung cottage door,
+And in the sacred fount they dip,
+Or tell the lore with alien lip;
+Or, dreaming, scan far snow-crowned heights,
+Lit, as of old, with pagan lights.[Pg 47]
+While through the thyme, ’mid rock and pool,
+The sheep-bells tinkle, water cool,—
+And in the mountain pass, a pipe
+Plays on and on and on—
+A pipe plays on.
+
+
+While glowworms blur the dewy gorse,
+And stars float from their tidal source,
+And Grecian peasants steal
+By creaking wagon-wheel,
+We ponder on this Life and Death
+Within the taking of our breath;
+So old, these ruined fanes that lie,
+Beneath the temple of the sky!
+So old these sacred stones that gleam
+With the strange shining Delphic dream.
+While in the mountain-pass the pipe
+Plays on and on and on—
+A pipe plays on.
+
+
+So old, this silence trembles, brought
+To solemn tension with our thought—
+Deep as the mystic strain
+Born in Apollo’s fane:
+“Dear God, ’tis well no Pythoness
+For us may prophesy or bless!
+Well, that no riddle-verse controls
+The will that slumbers in our souls!
+Well, that we choose, calm, clear-eyed, free[Pg 48]
+To live and learn our truth from Thee!”—
+Still in the mountain-pass the pipe
+Plays on and on and on—
+The pipe plays on.
+
+
+
+
+
+[Pg 49]
+THE DESCENT FROM DELPHI
+
+
+
+
+Dawn, pallid and cold,
+Parnassos, grave in the mist
+Like the shrouded form of a priest;
+No light in the East,
+Save thin stars, worn and old.
+
+
+Under the “Shining Ones”
+The temple-steps, in white,
+Chromatic, gleaming, light,
+Mount to the stadion’s
+Oval of crumbling stones.
+
+
+Dawn, stealthy and still,
+Frostily fills the fields,
+Dew sprinkles the maize;
+Where ranging cattle graze,
+His pipe a shepherd plays.
+
+
+Sun, striking the snow
+On far off mountain height,—
+Day, solemn and slow,
+Rises from Long Ago
+Clothed in pure samite.[Pg 50]
+
+
+A scarlet rug in a field;
+A man and a woman asleep—
+Around them, dogs and sheep,
+Where the maize is quivering gold,
+As the broad day is unrolled.
+
+
+The man and the woman asleep—
+Alone in the Delphian field!
+And the world, once more revealed
+Young, and all time is healed
+The Oracle unsealed!
+
+
+
+
+
+[Pg 51]
+TWILIGHT ON ACRO-CORINTH
+
+
+
+
+From the Venetian arch, the doubting owl
+Sends forth his whimper; where the sheep-dogs lope
+Sounds donkey’s thirsty octave, call of fowl,
+And near green-silver maize and poppied slope,
+Goat-bells ring jangling on the tether-rope
+As, truant from some hooded shepherd’s scowl,
+Dim, hornèd shapes in black thyme-bushes grope.
+
+
+I look four ways down all the rich descents
+To mountain, cliff, and sea. First to the South
+Where Argolis in purple permanence
+Gives sumptuous breast to dark sea’s hungry mouth.
+Enthroned in mountain fastness, warm, immense,
+Or, lying prone by misty olive-fence
+Losing herself in languid, dusty drouth.
+
+
+Far Eastward, islanded Ægina keeps
+Her tree-girt shrine, and Sunion the prow
+Of white sea-temple lifts on Laurion steeps
+Where mines are hid, and silver quarries show.
+Then, like a bee, the eager eye upsweeps
+To Athens, where the Acros-flowers grow
+And the dim road to far Eleusis creeps.[Pg 52]
+
+
+I look toward Athens, over golden gorse,
+Purple anemones, Saronic seas,
+Powerful, kingly blue. I see the source
+Of all Mind ever was, and then the trees
+Blurring, I turn me West, perforce
+Sweeping Arcadian ridges, as light flees
+And over paling skies cloud-horses course.
+
+
+Bœotia, Phocis, Lokris ranges tread
+Vast gorges ’round the Gulf’s imperial shores;
+Like citadels, their summits, thunder-bred,
+And at their feet are sacred river-floors,
+And many a mountain stream its crystal bed
+Has hidden beyond those labyrinthine doors
+From whence down winds the clue-like glancing thread.
+
+
+And as the night surrounds me and the stars
+Climb up the clouds like mountain-pastured flocks,
+I muse on Progress, that which hurts and scars
+Nature with blood, machines, and battle-shocks.
+But, as I gaze, the whole wild sky unbars
+War’s end portending; the new time unlocks
+Ultimate peace no human passion mars.
+
+
+
+
+
+[Pg 53]
+ROMANCE
+
+
+
+
+The “wine-dark” sea menaces as of old,
+When young Odysseus dared; and all our ship
+Shudders against the midnight mountain-waves
+Hurrying to crush the steamer, in her plunge
+On black path, under wind-blown scattered stars.
+Strange is the contrast! Strange it is to lie
+Cabined and berthed, feeling like crystal, hid
+In a night-moving mountain; thence to see
+At port-hole’s glimmer, land, solemn and strange!
+Old as all prayers, all vigils, and all hope!
+As the ship stops at Patras, and bells ring,
+To look out on the mole-lights, red and white,
+And see the black, unreadable night-shore.
+And then, to lie back, ponder the mystery
+Of that one man—that little ugly man—
+Reviled, unknown, and unbelieved, who burned
+So fiercely with his message, that he sailed
+From port to port, to give it. My age boasts
+Its Christian ethics cool expedience.
+That age, simply knew a man named “Paul,”[Pg 54]
+Who fought with beasts, endured the stripes, to give
+His flaming, tender, strong epistles; wrote
+To the people, as ’twixt starvings and shipwrecks
+He sailed these waters, from the “upper coasts.”
+
+
+
+
+
+[Pg 55]
+NIGHT IN OLD CORINTH
+
+
+
+
+A hill trembling with grain
+And a winding path.
+Shadowy sheep on the slopes;
+The sound of bells and sea,
+The sound of a peasant song,
+The sound of pipe and drum ...
+And in the twilight grey
+Apollo’s temple.
+
+
+Wide doors and the cottage fire,
+Bright coffee-coppers; plates
+Of white curds and of fish;
+A man in a scarlet cap,
+Turning a roasting spit;
+A woman by the fount ...
+And in the twilight grey
+Apollo’s temple.
+
+
+How was it when Paul came?
+Corinth was blazing white,
+Walled and rich and corrupt.
+They “sat to eat and drink
+And rose up but to play!”
+The Purple Sellers knew ...
+But in the twilight gleamed
+Apollo’s temple![Pg 56]
+
+
+The fountain’s hung with moss
+But the cypress-trees are tall,
+And little wingèd shapes
+Say “Níke” in the ground.
+The Jews “requiring signs,”
+And the Greeks “looking for wisdom,”
+Still in the twilight, see
+Apollo’s temple!
+
+
+
+
+
+[Pg 57]
+AQUAMARINE
+
+
+
+
+I think, when I grow tired of the world,
+I shall go back to Greece (in spring, of course),
+By forest trail, and oleander source,
+Past snow-peaks on green mountain lawns impearled.
+
+
+To Trypi: where, from saddle I shall slide,
+And hear my donkey’s bell jerk as he feeds
+On herbs and simples—growing to his needs—
+By rosy roofs set in the green glenside.
+
+
+Far down the valleys I shall hear the call
+Of white-garbed peasants; throaty cattle-cry;
+The little Trypi brook will rustle by
+Among the poplars, silver-green and tall.
+
+
+I shall watch Greek girls, toiling up the height,
+Laden with brush and whorls of scented thyme,
+And see their youthful climbing pantomime,
+Ere I lie down to ponder with my might
+
+
+On three sweet subjects, simple village themes,
+And yet so strange, so subtle, I have met
+No man, nor woman, who can tell me yet
+The answers, nor have found them in my dreams.[Pg 58]
+
+
+First: The Greek plane-trees, cool ancestral trees,
+Biblical-strong, like mighty tents of Saul,
+What earth power spreads their green ethereal
+Canopied gloom, their soft immensities?
+
+
+Next, the Greek fruits and flowers; what godlike soil
+Nourishes orange, fig, and olive stretch,
+So that no child goes forth the goats to fetch
+But fills his cap with colored orchard spoil?
+
+
+Last, I shall ponder (never sure, quite,
+Imaging richly, merged in miracle)
+Wondering what source conceals the mystic shell
+Staining with blue the Ægean’s mica-light.
+
+
+Lies in it some great Pool, that slow distils
+Azure of flowers and skies to pigment bold?
+Or do the encircling mountain-chains enfold
+A vat of purple, whence wine-color spills?
+
+
+Ægean Blue, that crimson-orchil tide
+Bold, deep, intensest, incandescent flame,
+Pure well of Azure, fitly has no name
+But Greece in her inimitable pride
+
+
+Of worship on strange occult secret planes
+The hidden sponsors of her visual life
+May, long ago, ’neath sacrificial knife
+Have loosed the gods’ blue blood from Dacian veins.[Pg 59]
+
+
+One can see Spartan blood flow down Greek shores,
+In crimson poppy-tide, in scarlet waves;
+But it is “wine-dark” energy, that laves
+Gold-bronzèd rocks and hidden sea-cave floors.
+
+
+Ah! it is not enough for me to say
+“Faery silver-azure! Clear, superb
+Cobalt no chemistry of sun can curb,
+Attar of purest lapis-lazuli.”
+
+
+’Tis not enough for me to invent a name
+Like Nauplian Blue, Greek Blue, Blue of Emprise,
+As I re-vision golden argosies
+Or red-sailed moth-boats sailing molten flame.
+
+
+No—I must ponder (never sure quite),
+Always a-dream in Trypi, where the trees
+Whisper adventurous old names of seas,
+Through silver valley-eve and mountain night.
+
+
+
+
+
+[Pg 60]
+THE SHEPHERDESS
+
+
+
+
+Not only mulberry vendors travel Langada Pass,
+Rough soldiers and black-fezzed peddlers take that trail
+And stop to drink at a khan ’neath the rocky mass,
+Where the pine-trees root in the drifts of sliding shale,
+And a half-crazed Greek sells resin-wine and cheese
+And “Thalassa” mutters, pointing to far-off seas.
+
+
+For Langada Pass is miles of precipice rock
+Where the rug-hung pack-mules scramble with fumbling feet
+Sliding unsteadily over the cobbles, that shock,
+Stone upon stone, in monotonous noontide heat.
+But a mountain girl, fleet-footed, with brown knees bare,
+Flutters along the crags, where the great pines flare.
+
+
+Now the mulberry vendors are fuddled with Spartan rum,
+They howl in the cañons and kick the sides of their steeds.[Pg 61]
+The soldiers are merry, they sit on the rocks and hum
+And talk politics and twiddle their malachite beads;
+Hardly a shrine for a maid, or a convent roof,
+Under the blue sky, classic and calm and aloof;
+The goats stand cynical, cloven of horn and hoof.
+
+
+But she whistles and calls and scrambles up to her flock,
+High on the bronze-grey peaks of Langada Pass,
+With warm eyes mote-flecked, bright as the quartz gold rock
+A deer-like, dryad-like fierce, shy, crag-born lass,
+Perching where orange anemones spangle the banks
+And white streams flash down thicketed mountain flanks.
+
+
+We told her the tale of the world and the dreams of men,
+We poured out wine-of-the-world in her shepherd cup,
+She took it calmly, thoughtfully, drinking up
+All that we were, quaffing us, thirstily, then:
+“Salute your cities,” the wild little shepherdess said,
+And swift as an eagle, far up the precipice sped.[Pg 62]
+
+
+Washington, New York, and Boston have new renown!
+Their rivers of seething light, where the witch wires hold
+Clustering, bright-balled fruits, and the chimneys frown
+Like satyrs drunk with smoke through the sunset gold—
+All these must bow, in turn, to a little lass
+Who “salutes the cities” out of Langada Pass!
+
+
+
+
+
+[Pg 63]
+MAY-DAY IN KALAMATA
+
+
+
+
+In Kalamata, where the harvests are
+Purple and crimson for the currant-bin,
+When merchants close their shutters with a jar,
+The young night-gallant twangs his brown guitar,
+And first begins the merry May-day din.
+
+
+All night they strum the mandolins and lutes;
+Glyco, the jolly merchant of the fruits,
+Sings to accordion: “O nux kalé!”
+In Kalamata on the first of May.
+
+
+Morning comes. See the church across the street
+Its doorway wreathed! See Anastasia pass,
+Twining her pretty shoulders with the sweet
+Mountain-born orchids, brought on tireless feet
+By lads from Sparta o’er Taÿgetos.
+
+
+All night they strum the lute, and mandolin,
+Georgio, the dark-eyed, plays the violin,
+Sings under balconies: “O nux kalé!”
+In Kalamata on the first of May.[Pg 64]
+
+
+The cottage-doors are hung with poppy-wreaths,
+To keep away the evil spirits: hats
+Are garlanded with oleander. Leaves
+Fair, golden-braided Marianthé weaves
+Into a veil for her long sunny plaits.
+
+
+All night they sound the flutes and castanets;
+Mitchu, in pompommed shoes, fingers the frets,
+Quaffs resin-wine,—“Aha—! O nux kalé!”
+In Kalamata on the first of May.
+
+
+To the Platea, all the booths astir;
+Mulberry vendors clad in goat-skins come;
+Here are embroidered bags and fragrant myrrh,
+And silver-handled knives; and the drum-whirr
+Beats like a heart throb in the village hum.
+
+
+All night they play the rough accordion;
+The sailors from the “skala,” to a man,
+March, drunk with mastika, along the quay,
+In Kalamata on the first of May.
+
+
+Along the railroad all the stations fill
+With children garlanded; the peasant throngs
+Sing at car windows. From a laurel hill,
+Rings “Zito” with the happy springtime thrill,
+While rose-crowned maidens chant their merry songs.[Pg 65]
+
+
+All night they play the violin and drum;
+And to the windows tawdry women come
+Bright-eyed and bold, to hear: “O nux kalé!”
+In Kalamata on the first of May.
+
+
+May-day, down all the silver-olive plain,
+Along the mountain trail, and torrent track,
+May-day on ships on blue Messenian Main,
+On locomotives, where the young Greek swain
+Hangs lily wreaths upon his engine stack!
+
+
+All night I hear the zither; the guitar
+Maddens my northern pulses, and from far,
+Far up the mountainside: “O nux kalé!”
+Wakes Kalamata on the first of May.
+
+
+
+
+
+[Pg 66]
+FROM THE ARCADIAN GATE
+
+
+
+
+From Arcadian Gate, with its tower-topped bulk,
+White on Ithóme’s war-ridden hulk,
+A road winds down past the artichokes,
+And the almond-trees, and acacia-spokes.
+And, silver-harnessed, the small brooks fly
+Down to Messenian industry.
+And, here one sees, under the trees,
+Greek women making the cheese.
+
+
+Black kettles hang from the giant plane,
+Where children gather, and where you gain
+A charming sight from your donkey-mount,
+For the wash-trough’s set by the village-fount,
+And, hanging high on the olive-boughs,
+Where, grey, light-fingered zephyrs drowse,
+Swaying in bags, in the summer breeze,
+Greek babies take their embroidered ease.
+
+
+In old Dodona, so they say,
+In a time when priest-craft had its sway,
+“The Will of the Gods” came jostling,
+Through the oak-leaves’ gentle rustling,[Pg 67]
+And the Priest of the Oracle carefully hung
+Brazen vessels, which, easily rung,
+By moving branches, in many keys,
+Instructed the Greeks how their gods to please.
+
+
+’Tis an old Greek fashion this hanging of things;
+Many the legends from which it springs.
+Twists of scarlet, and bright-dyed flax,
+Hang on the rough Arcadian shacks,
+Where the railroad follows the mountain base.
+They hang brown jugs by the watering-place.
+Amulets hang on the goats and the swine;
+Wreaths hang high on the house and the shrine.
+
+
+And now the pots for the cheese
+And the babies in black-eyed reveries
+Sway, like the brasses long ago.
+Hanging on high branch and on low!
+Somehow the sight doth strangely please,
+This new fruit on the old Greek trees!
+One hears “Will of the Gods!” in speech
+Babbling from olive and oak and beech.
+
+
+
+
+
+[Pg 68]
+THE ABBESS
+
+
+
+
+Pink oleander lamps the brook-bed trails,
+And orange-trees hang fruitage o’er the grain,
+And there are hedges, green with fitful rain,
+And cyclamen in white the hillside veils.
+
+
+While through the villages, ’neath Mistra’s height,
+The children run to give a rose and stare
+At strangers riding where grey olives flare
+Mistily in the long hills’ summer light.
+
+
+Rose-pinnacled, a Franco-Turkish wall
+Trailing with ivy, rears its crumbling mass,
+Pantassa Church’s apse and mouldered hall
+Look down upon the plain of Eurotas.
+
+
+Byzantine tower’s clear octagonal,
+Jewel-like and fretted, circles on the sky;
+A pavèd walk leads to the nunnery,
+Past moss-grown arch and ruined capital.
+
+
+And here, an Abbess, old, yet maiden-faced,
+Sits in a frigid pomp, in solemn pride:
+Stately, aloof, the church’s pallid bride,
+Greets us with countenance austere and chaste.[Pg 69]
+
+
+The Abbess leads the way, with rigid calm,
+Detached, haughty, imperious; her eyes
+Pompously ignorant, religious-wise,
+Cool as the blank intoning of a psalm.
+
+
+There are great piles of rose-leaves in the room,
+Convent-brewed wines and bright bags, needle-wrought;
+There is an ancient fountain in the court,
+And guttering candles in the Church’s gloom.
+
+
+“The times have changed,” we said; “women no more
+Hide them from life. We mingle and we work.
+Christ only asks that not a soul shall shirk
+Or flinch from bearing burdens that He bore.”
+
+
+The Abbess smiled. “Silence,” she said; “we learn,
+On this hilltop we women watch the East,
+The morning sun o’er Sparta is our priest,
+The mountain stars like midnight tapers burn.”
+
+
+We looked at her; her eyes were crystal clear,
+Passionless, pure and cold as moonlit snow.
+Something she felt that we could never know;
+Our vision to her eyes could not appear.
+
+
+We left her in the shadowed court to brood,
+Where Frankish frescoes peer through shadows dim,
+And cloistered nuns in tuneless, wailing hymn,
+Chant Faith untried in mountain solitude.
+
+
+
+
+
+[Pg 70]
+GREEK FARMERS
+
+
+
+
+In green Laconia, where the hedges are
+Spring-starred with flowers, and the little brooks
+Wake all the mountains from their solemn dreams
+Of the old days, when gods moved strong and white
+On hill and sea, or slept within the clouds;
+There are great slopes, broken with tillage, rough
+With clumsy ploughing, thick with olive-trees.
+And here they stand, the tall, black-bearded men,
+Whose eyes, unblinking, look into the sun.
+Men, plainly bred from tribal wanderings,
+Whose blood is fevered fire, men whose lands
+Are bare with waste and bloodshed; men who stand
+Gazing at strangers with shy interest;
+Who, when you question their fresh peasant-eyes
+Straighten up from their field-tasks and reply:
+“These are our flocks and pastures—we are Greeks!”
+
+
+Black-bearded men who sow, What is the Seed?
+For Greece has lain beneath the Turkish plough,[Pg 71]
+And all her hills and mountains smoke again
+With treachery, rape, and murder. On the seas
+The nations wait to grasp; the kings and crews
+Who play the Blood-game snap at little lands
+Like dogs at flies. Yea, that fair seed ye sow,
+Is it Greek seed? though sown by mongrel hands?
+Seed of a greatness far exceeding theirs,
+The lands that would despoil Greece? Will it grow
+That seed, Deucalion’s hope, Athena’s pride,
+Is it once more the sacred seed that fell
+Out of Demeter’s hand on holy ground?
+Or, is it Cadmus-sown, for crops of Hell?
+Truthfully, farmers, can ye stand and say:
+“These are our fields and pastures, we are Greeks”?
+
+
+They make no answer—strong, black-bearded men,
+Grimly at work on the Phigalian Hill
+Where the grey Bassæ Temple guards the corn.
+They make no answer in the mountain towns
+Arcadian, where pink-roofed houses splotch
+The hillsides and where hidden teamsters climb
+Thicketed bridle-paths beside the streams.
+They cannot tell us, if they know, what seed
+The sculptors, patriots, and statesmen sowed;
+Nor even if these furrows that they plow
+Will bring a season’s harvest to their doors.[Pg 72]
+But, as we pass them, under upland oaks,
+Under the fig-trees in the rocky gorge,
+They walk with strange, fleet steps, so tireless,
+So strong, with eyes set on some distant goal,
+Till we, too, puzzled, murmur: “They are Greeks.”
+
+
+Oh, fateful World! insatiate modern life—
+Driven by urgencies too great to tell,
+Destroying, recreating, balancing—
+What of this Old World, dreaming modern dreams,
+Yet with the old dream dwelling in the land
+To teach it Pride? Shall we dare face a Greek—
+With all his shining temples at his back,
+With the eternal Thought behind his name,—
+As he were German, Russian, Turk, Chinese?
+If these black-bearded mongrels share the pride
+Of Argonauts and claim a classic birth
+And till the wild land, dropping in the seed,
+Forever saying softly, “We are Greeks,”
+Why should they garner any other crop,
+Why should they bend and toil for better gain
+Than seeing New Greece realize her dream?
+
+
+
+
+
+[Pg 73]
+SONG
+
+
+
+
+Toil on, fishermen!
+Pan sits on the cliff,
+Smiles and watches the fare,
+Wreaths him with flowers there,
+Bites at a lettuce leaf,
+Binds him a poppy sheaf,
+Drinks from a painted jug,
+Watching the full nets tug;
+Toil on, fishermen!
+
+
+Work on, harvesters!
+Demeter rests on the hill,
+Near to the threshing-floor;
+Near to the cottage door,
+Girds her with fruited vines,
+Blows foam from the wines,
+Drinks from a golden bowl,
+While corn-filled wagons roll;
+Work on, harvesters!
+
+
+Rest well, goat-herds!
+Hermes cares for the sheep,
+Flashes across the sun,[Pg 74]
+Burnishes helmet wings,
+The wreathed caduceus brings,
+To swift talaria-flight,
+Through the sheep-scattered night;
+Rest well, goat-herds!
+
+
+
+
+
+[Pg 75]
+TO THE OLYMPIAN HERMES
+
+
+
+
+Now let the formal, folded curtain fall
+Over this majesty of mellowed stone.
+Let me go forth with eyes alight with joy
+From this god-gazing. Let me not pause nor stay
+Till by some clear word I have given faith
+To doubting minds, how Greeks ennobled form
+And carved high meaning in a body’s truth.
+Yet, Hermes, fair god, consciously the flower
+Of the Greek dream, sculptured so lofty-kind,
+Stainlessly physical, superbly true;—
+Who is to tell thee that thou hast one fleck
+On that pure manliness, and dare to speak
+Something against thy calm that seems to say,
+“Earth has no greater gift than perfect limbs,
+And god-like manhood’s straight significance”?
+Forgive me, Hermes, I had thought to take
+Thy princely healthiness to ailing worlds;
+To meanness and to littleness and lust,
+Bidding them gaze upon thee in thy calm,
+Telling them: “This is all. This Hermes stands
+For Greek expression of a definite truth
+Speaking its message to the world of men
+And placing beauty as a final goal.”[Pg 76]
+But then I pondered: What will be the gain
+If men say: “Hermes is very kind and fair,
+Wholesome and generous and unafraid
+And—soulless! Let be! we’ll no longer hope
+For strength more than the body—loftier calm
+Than this superb control of manly limbs,
+Friendly with sun and rock, and sea, and life.
+Now yield we up that old, defeated claim
+Of soul, the ugly, hunted, harried thing,
+And trust us to a pagan manliness,
+Stand Hermes-like, unpuzzled, unamazed!”
+I knew, oh Hermes! Greek perfection, lit
+Like stately lamp with one clear, shining joy,
+That of well-being, I knew life ended not
+With just the beauty of a human form;
+Marble, translated into mystery
+Must needs have line to make it fair and right;
+And that is all.... Thy unknown sculptor knew
+The pagan mind and set thy godhood high,
+In an unsullied semblance of a man
+Untouched by sorrow, poverty, and shame.
+Immortal semblance—then the cleavage comes!
+Real men must live (we mortals know the fight),
+Hot-blooded, passionate, forlorn, astray;
+We know how men determine to be true
+To some one Greatness,—struggle to the test
+Baffled and crucified;—in bitter shame
+Leaving the unsolved meaning of their lives.[Pg 77]
+And now we know, by those French faces torn
+To rags, around the dumbly loyal eyes;
+By English soldiers, done to crippled wrecks
+And hideous mangling, how men dare to die,
+Or live their silent, agonizing days.
+And then we know there is a human thing
+Transcending any body—called a Soul!
+Yea, let the formal, folded curtain fall
+O’er all that graciousness of mellowed stone.
+The Pagan knew the beauty of the flesh.
+We, Modern, view that beauty with resolve
+Firm and unswerving that it be outdone,
+Firm that all ugly, bruised, and broken things
+Shall stand invested with a deathless pride
+Before our eyes—that see them beautiful;
+Determined that the perfect ones approach
+Humbly with sense of some imperfectness,
+And kneel in homage to the shattered brave.
+
+
+
+
+
+[Pg 78]
+GREECE, 1915-16
+
+
+
+
+Yea, taunt me, World Voice—I am dumb and blind,
+My body broken, and my heart unclad.
+Yet am I silent, while strange forces wind
+The chains about me. Helpless, scorned, maligned,
+I answer not. The Greece of long ago
+Speaks for me in this newest time of woe.
+
+
+Europe reviles me. Yea, I stand alone
+Like woman left before the ruined door,
+Like woman who, beneath her outraged moan,
+Remembers sacred hours. Like a stone
+I am cold, passionless, mid the wild uproar,
+Murmuring “Peace” and “Hellas” o’er and o’er.
+
+
+Apollo’s beauty sprang from out my womb;
+Socrates called me, mother. Every hill
+And templed glade, and solemn-urnèd tomb,
+Bids me refrain; no longer to resume
+War and rapine, no longer blood to spill,
+Nor hate engender, nor intent to kill.[Pg 79]
+
+
+Europe! Greece speaks, Greece, who so deeply drank
+The bitter cup of ravage; who has laid
+A new foundation: near her altars, blank
+Of by-gone fires, she phalanxes the rank
+Of golden grain. And bids the new-born Greek
+Old classic words with modern tongue to speak.
+
+
+Homer withholds me, Æschylus restrains,
+“Human Euripides” exhorts me—“Stay!”
+I was despoilèd once; strike off my chains,
+Unsay the insult! Greece nor plots nor feigns,
+Only withholds her, agonized, at bay,
+But loyal to her hallowed cliffs and plains!
+
+
+
+
+
+[Pg 80]
+THE SINGING STONES
+
+
+“Remember me, the Singing Stone ... for ... Phœbus ... laid on me
+his Delphic harp—thenceforth I am lyre-voiced; strike me lightly
+with a little pebble; and carry away witness of my boast.”—Greek
+Anthology.
+
+
+
+
+Beyond brute Titan dissonance, black, bitter strains
+Of Warfare; through the smitten fields of wheat;
+Upon the bloody bridges, where the wains
+Roll drone chords between marching soldier-feet;
+Through mob-voice, robbed of cadence and of beat,
+I hear the Stones of Sunion
+Singing by the sea:
+
+
+“Lift we on high our time-defying shafts!
+Our white-wing on the promontory stays,
+Our age-old glory from the Ancient wafts
+Godward out of an old, blind, Pagan mood,
+While in the surging blue the Islands brood
+In dim, time-purpled haze.”
+
+
+Out of the din of sociologic strife,
+Of hoarse-voiced men, embruted by their work,
+Of women, low-intoning lesser life,
+From the rich Theme, which modern voices shirk,[Pg 81]
+Where all the forced, half-harmonizings lurk,—
+I hear the stones of Delphi
+Singing in the rain:
+
+
+“Black swell the mountains, guarding well the Cleft,
+Clear spills the water, o’er the fountain rim,
+The worshipers are gone, the priests bereft.
+Men keep no light upon the altar dim;
+No Council meets, but ah, the hope is left,
+The dream goes on, new voices chant the Hymn.”
+
+
+To the soft twilight of Æsthetic ease,
+Where a smile is no smile, a tear no tear;
+Where the fruit has no seed, the wine no lees,
+No strong song comes. Yet, faintly year by year,
+’Mid those who listen, wistful, and in fear,
+I hear the stones of Bassæ
+Singing on the heights:
+
+
+“Grey comes the dawn upon the mountain crest,
+Warm lie the vines on the Phigalian Hill;
+The deities are gone, their secrets rest
+Hidden by time. But still the Sun-God smites
+Altar and soil, and richly thus requites
+The farmers’ faith, and all the fields fulfill.”
+
+
+And everywhere my wistful head is bowed,
+Pensive, absorbed, to find significance,
+I hear stone chorus; the immortal crowd
+Of pillars round some vocal radiance—[Pg 82]
+Chant Spirit-Song of new inheritance—
+I hear all Pagan Temples
+Singing in the dawn:
+
+
+“Lift we on high our columns shining white!
+Our broad wings on the promontories stay;
+For us forever was the world’s first light,—
+Ignorant God-seeking. Ye, that follow, may
+Soar to a higher vision! ’mid the Pagan night.
+We were the singers of a brighter Day.”
+
+
+
+
+
+[Pg 83]
+THE OLD QUEST
+
+
+“Feed in joy thine own flock and look on thine own land.”—Greek
+Anthology.
+
+
+
+
+“Friend! hast thou seen the rosy mass
+Of cyclamen along the pass
+To Arcady?
+Doth the green country sweep enlarge
+Beneath the white cloud’s floating barge?
+Does the sun lift a gleaming targe
+On Arcady?
+
+
+“Hold.... Do the trees keep happy nests
+Between the young leaves’ trembling breasts
+In Arcady?
+Does running water laugh and sing,
+Do butterflies waft wing-and-wing?
+Spins the white moon her mystic ring
+O’er Arcady?
+
+
+“Speak!—Are there greenwoods cool and dense,
+Do flower-grails gleam out from thence
+In Arcady?
+Do pines the aisles and arches blur,
+With frankincense and breaths of myrrh,
+Veiling the happy forms that stir
+Through Arcady?[Pg 84]
+
+
+“Thou seest that I am blind,”—said he,
+“But hast thou been where I would be
+In Arcady?
+Oh! didst thou see within the gate
+The one who promised me to wait?
+Stays she for me, though I come late
+To Arcady?
+
+
+“I wonder that she doth not send
+A clue to show the roads that trend
+To Arcady—
+But thou canst tell me. Does it rise
+Empinnacled to azure skies?...
+Thou sayst?... None knoweth where it lies,
+Fair Arcady!”
+
+
+’Tis sunset and the end of day,
+The roads are closed—so all men say—
+To Arcady.
+The birds and butterflies are fled;
+The honey quaffed; the perfume shed;
+The feet that used to dance are sped
+From Arcady.
+
+
+“The roads are closed?... Oh, not to me!
+Thou seest that I am blind,” said he.
+“And Arcady?...
+Full well I know thou liest now,
+Hast thou the world-mark on thy brow?
+Hast thou no one to ’wait thee—thou?
+In Arcady?”[Pg 85]
+
+
+He wanders down the darkling way
+The mute horizons watch him stray
+Toward Arcady.
+His feet are bleeding, he is blind,
+He dreams of that he will not find,
+But in his wide unconquered mind
+Lives Arcady!
+
+
+
+
+
+[Pg 86]
+THE GODS ARE NOT GONE, BUT MAN IS BLIND
+
+
+
+
+Over the hills the gods come walking,
+Where the black pines draw their swords,
+And the spell-bound leaves cease talking,
+For the High-Priest sun comes stalking
+And ’tis no time for words.
+
+
+And oh! the gifts the gods are bringing—
+Stretches of happy heath,
+Jewels with souls, and flowers singing;
+Smiling stars, and new hope springing
+With the wingèd hope called Death!
+
+
+Over the hills the pipes are playing,
+And the gods come strong and fair.
+Alas! they know not of the straying,
+The faithlessness and bitter saying:
+“We know no gods, nor care....”
+
+
+Over the hills—the day-sky kindles
+On a blackened world of clods;
+Dead and dry are the flaxless spindles,
+The cruse is drained,—the fire dwindles ...
+No worshipers for the gods!
+
+
+
+
+
+[Pg 87]
+THE SEA OF TIME
+
+(Sappho sings to Alcæus)
+
+
+
+Only our few short hours,
+For you and me;
+Temples and groves and bowers,
+And then—the Sea!
+
+
+Only our finite word
+For you and me,
+Who knows what gods have heard
+Under the Sea?
+
+
+Love, though the gold moons wane
+For you and me,
+We shall not meet again
+Down by the Sea.
+
+
+Ours shall be hidden ways;
+For you and me
+Stretch the long separate days—
+Mist on the Sea!
+
+
+Artemis—will she say
+For you and me
+What Law we must obey
+Moves in the Sea?[Pg 88]
+
+
+Moves, till the faces worn
+By you and me,
+Luminous, dream-forsworn
+Change in the Sea?
+
+
+Change, for unending tides
+Bear you and me
+And the Self in us glides
+From Sea to Sea.
+
+
+Love, shall the sailing souls
+Of you and me
+Float where new shore unrolls
+Rimmed by the Sea?
+
+
+Comes then the meeting place
+For you and me?
+Silence ... white bubbles trace
+Foam on the Sea!
+
+
+
+
+
+[Pg 89]
+ON THE THOROUGHFARE
+
+
+
+
+To-day I go to buy some dates
+From Glyco’s cart.
+“Ten cents,” my smiling fruitman states,
+And then we part—
+I to the mart,
+He for the next fig-buyer waits!
+
+
+Back to my world I go, its keen
+Quick energy
+And competitions sharp and mean,
+Its flippancy,
+And sophistry,
+And tampering with things unclean;
+
+
+But Glyco waits; he has ten cents;
+And he has hope,
+And back of him, antecedents
+Give him such scope!
+With his traditions’ affluence
+I cannot cope!
+
+
+
+
+
+[Pg 90]
+AT PÆSTUM
+
+
+
+
+The low, flat marshland, myrtle overrun,
+A palm, a Roman wall that skirts the way,
+The far blue reaches of Salerno’s bay,
+Then ... the three temples standing in the sun.
+
+
+These are the caskets of the sun-sealed years;
+’Mid tides that ebb and flow, ’neath stars that set,
+Deathless their grave and tranquil beauty ... yet
+Buried in silence, in eternal tears.
+
+
+Beneath these tympana the Dorians trod;
+Here, Doric priests upon an alien shore
+Made sacrifice, perhaps these myrtles wore,
+And garlanded the offering to their god.
+
+
+Demeter saw the bright libations spilled;
+To Hermes leapt the scarlet through the fleece.
+Amid these columns moved the gods of Greece;
+These lofty spaces with the pæan thrilled.
+
+
+This, centuries ago. Demeter now
+Is known no more. Poseidon, too, hath fled.
+’Twould seem that Pan and Hermes both are dead;
+No Nike springs upon a Grecian prow.[Pg 91]
+
+
+Yet is this sacred pause, this pillared calm
+Still stirred by whispers from Tyrrhenian waves
+While near the shadows of these architraves
+Lie smiling shores of terraced fruit and palm.
+
+
+And springing from Demeter’s altar site,
+Where the old dream of gods hath died away,
+And the Greek torch burned down to ashen grey,
+There blooms a star shape, mystical and white.
+
+
+One mystical white star! Oh! Pagan fire
+Whose temples stand, whose gods have been forgot,
+One goddess holds in memory this spot,
+Else why should Nature thus in bloom aspire?
+
+
+Why else in this dim fane the sea intone,
+And sun send fire to the altars bare,
+And moss and lichen trace strange scripture, here
+The lizards flash like symbols o’er the stone?
+
+
+The low, flat marshland, myrtle overrun,
+A palm, a Roman wall that skirts the way,
+The far blue reaches of Salerno’s bay,
+Then ... the three temples standing in the sun.
+
+
+
+
+
+[Pg 93]
+PHIDIASA DRAMATIC EPISODE
+
+[Pg 95]
+Dungeon in an Athenian prison; a small grated window near the
+ceiling shows a patch of blue sky. The scene discloses Phidias,
+prostrate and manacled. In the dusk of the cell lingers the
+Jailer.
+
+
+
+Jailer (curiously). What sayst thou, Phidias, who art accused?
+The old plaint, snarling that thou art abused?
+
+
+Phidias (lifting his head wearily). What do I answer? Yea! what thing thou wilt!
+What care I for this legendary guilt?
+Who makes or unmakes Unity? Accused?
+Why, any fool accuses. It amused
+The enemies of Pericles to stab
+At him through me. Let gossips spread their blab,
+The sea is just as broad, the sky as clear
+And I as blameless.
+
+
+Jailer (persisting). But that brought thee here,
+Took thee from royal favor, once the dear[Pg 96]
+Adviser, friend of Pericles. It seems
+Here is the end of all thy mighty dreams;
+’Twas Pericles who made thee, and there lurks
+His royal patronage about thy works.
+
+
+Phidias (sullenly). So reason vulgar minds; as well to say
+Hephæstus made me, manacled this way,
+Hammered to fever, bent to twisted woe.
+No, clown! no tyrant brought this overthrow,
+Nor my once vivid glory, but the fate
+That overtakes the artist; whether late,
+Slow, poisoning, by deadly world-born things,
+Or early blight of strong imaginings
+Too fervent for his frame. Athens is free
+From every blame. Not Pericles made me!
+
+
+Jailer (wagging his head obstinately). ’Twas love of Pericles that cast thee here,
+Ungeniused thee, put thee to rot in drear
+Murk of this den; and if not he who made
+Thee what thou wast—aloof and haughty blade
+Fellow I watched in Agora, as one
+Treading on air, thy white himation
+Streaming like wings back of thy eager form,
+As thy swift sandal moved among the swarm
+Of merchants, gamesters, thieves; while deep gaze drank
+Of something that was neither wealth nor rank—[Pg 97]
+Why then,—who made thee? for that thou hast fame
+’Tis granted, when the rabble speak thy name.
+
+
+Phidias (moving restlessly, clenches his hands, answering impatiently). I made me, fool, made this unfinished self,
+Nourished me as a child, in happy health,
+Fostered the thirst my mother gave to me
+With her electric milk. Ecstatic tree
+Charmides planted, I did grow and thrive,
+Adding to that, what Greece alone could give!
+Studied cult-statues, studied Xoana, saw
+Paralysis in Polygnotus’ law,
+Wondered that Hegias and Hageladas wrought
+Hardly beyond the cold Egyptian thought.
+Out of their almond-eyed archaic things,
+New butterfly, my free Athena springs!
+My Zeus Olympian came to my prayer
+To see a god. I saw, then made him there!
+(To jailer.) Poor ragged dolt, clanking thy silly keys,
+Did Pericles make me as I made these?
+Did Athens tell me what a man must do
+Who sees instinctive life, and sees it true?
+
+
+Jailer (impudently). How now! What saw’st thou that I might not see?
+A rosy nymph at bath! Aphrodite
+Caught in a net of foam? Hermes’ disguise?[Pg 98]
+Come now, what is this power within thine eyes?
+
+
+Phidias (speaking dreamily as if to himself). What is the power? Life! The heroic thing
+Streaming magnetic from a sea-gull’s wing,
+That light in stars, in waves, in children’s eyes,
+In green plane-tree, or in deep, sphinx-like skies
+Of unknown countries, where the grasses blow
+Unseen of man; where flower-laced streamlets flow
+Past mystic herbs, Demeter loves to keep
+Secretly growing on the mountain steep.
+I saw the curves of fruits, saw Grecian sails
+Take fire-blue seas; saw the soft, misty veils
+Of maidens wrap their limbs, saw horses, shields,
+Victories, warriors, priests, and battlefields;
+Each man a poem; women each a jar
+Filled with soft, psychic flame, an avatar
+Shaped to a noble outline, lofty truth
+From some great vital Source—
+(The Sculptor breaks off suddenly, scrutinizing the jailer and continuing.)
+Rascal, uncouth
+As are thy words and gestures, I can see
+Some trace of life-light.—Gods! were I but free—[Pg 99]
+
+
+Jailer (interrupting with smug complacency). Which, proper thanks to Theseus, thou art not,
+Thou light-fingered; thou dingy-robed sot!
+Carving thy way to treason, selling State
+For greasy coin, with Hermes as thy mate
+Slanting his profile on it. Dreamer,—thou!
+“Bronze-worker.” Yea! By Dionysus! How
+Thou workedst guilty things for Athens’ shame,
+Thinking to hide behind thy Patron’s name!
+Athens, the famous city; thou, a worm,
+Coiling in earth, no four-eyed marble herm
+Will mark. Our furry worms that make the silk
+Munch the mulberry; but thy crafty ilk
+Munch the fine gold, for sickly marble shapes
+Of statues stoned by every Jack-a-napes;
+’Twas thou, worm, coiled ’round thy princely friend,
+And gained War-Treasure for thy braggart’s end.
+
+
+Phidias (sadly musing). The fool is glib. His lesson he has got
+From Agora and Propylæa, not
+The polished utterance of Bema’s Hill.
+But that crowd’s word, that bodes or good or ill[Pg 100]
+From a fierce thirst; sneering pitiless breath,
+Freezing a man, or scorching him to death.
+
+
+Jailer (scratching his head, expectorates knowingly and argues). Why are thy statues costly? with the urns
+Of Dipylon Gate, the passer-by discerns
+Good lusty statues, made by Such-an-one,
+Quite comely, they, and all of porous stone;
+Why use Pentelic marble? so much gold?
+Thou dreamer-schemer, sculptor overbold?
+
+
+Phidias (with a moan turns from his tormentor to face the stone wall, muttering). “Dreamer,” he called me. Is it by that name
+My curse comes? Verily; I dreamed my shame,
+My rich accusings. Dreamed brook-flowing folds
+Of draperies, dreamed my young hero-moulds,
+Dreamed men who sat their horses, as they rode
+Clouds over seas, dreamed Panathenaic ode
+In singing-rhythm round the Parthenon;
+The frieze and metopes of Theseion;
+Dreamed the sweet-bodied girls, whose maiden strength
+Poise vase and basket all the Temple length.
+Dreamed the slow, garlanded, portentous beasts,[Pg 101]
+Led by the veiled and sacrificial priests;
+Dreamed the young, leaping horseman’s haughty ease
+Pediment grouped, or filleted in frieze.
+Was it a dream only to-day shall know?
+Lives it no longer than this artist’s throe?
+If that must be, then butterfly most drear
+I sink back to the worm-thing crawling here.
+
+
+Jailer (having curiously listened, now struts forward and faces the Sculptor. He eyes him stupidly and shakes his finger at him).
+    Why, were it not for Pericles who gave
+Thee marble, color, gold for statues brave,—
+Poured out his coffers,—we should amply be
+Equipped for Persia. Bronze and ivory
+Changed back to drachmæ, all the sacred rock
+Would stand as staunch, to the barbaric shock,
+As when Pisistratus, with hardy race,
+Made the Acropolis his fortress place.
+And look ye, with that gold Athena wears
+(Filched from State monies, for thy stone affairs),
+We could plant ships in Piræus, array
+Our strength to Corinth, where the Persians may
+Once more with envy strike.—But, thou wouldest bring
+To a State’s need thy stone imagining![Pg 102]
+Fie! but for gold, thy dreams would be as vague
+As fat my wife scrapes from altar-dreg,
+And boils to stuff to make my chiton white;
+Ethereal substance, wind-shaken, alight
+With lambent iridescence, very fine,
+From the amphora gushing forth like wine.
+But look you, in a moment, just a trace
+Of foam is all that froths from out the vase,
+And nothing’s left but the damp greasy lees;
+So knave, with thee, without thy Pericles!
+
+
+The Sculptor (with scornful amusement to himself).
+He mouths that name as if it were a mask,
+Through which a stupid actor says his task,
+Forgets, mistakes, yet struts around the place
+Thinking the mask gives him a certain grace.
+
+
+
+
+(Phidias wearily rises and stretches himself, the jailer meanwhile
+curiously observing him.)
+
+
+
+
+Phidias (abruptly). Slave, thou art childish, many a name like this
+Links close to art, for its own ego-bliss,
+To have possession, be the master, who
+Owns, keeps, controls, the work we artists do.
+Pericles views the height of Athens’ power,
+Pomp of Acropolis, where every hour
+In golden, crimson, blue, and creamy dye
+Ecstatic marble forms sing to the sky,[Pg 103]
+And hears them sing! (This for his kingly wage:)
+“Nikomen, Athens, Pericles, Golden Age!”
+
+
+Jailer (looking at the prisoner with heavy curiosity). And what, by Hades, is the thing they sing?
+
+
+Phidias (turns impulsively to answer; then a fierce reticence makes him draw himself up and turn away).
+    Torture me not with thy coarse questioning;
+My sorrowing answers, for the ribaldries
+Of bath or games: “Thus spluttered Phidias,
+Maddened at being walled up.” So the crass
+Idling crowd, jostling in brainless mass,
+Gapes, sneers, and marvels, at my grim defeat;
+Mud covers stately names where rascals meet.
+
+
+Jailer (with offended dignity). Well, then, good-night. I leave thee to thy prayers.
+No friends, no patron, for thy artist-wares,
+Unless, indeed (grinning back of his hand)
+Zeus showers thee with gold
+Like Danaē.
+
+
+Phidias (steadily and reverently). Yea, most mighty Zeus can hold
+Me to my service, to that Ageless Thing
+Higher than he, called Beauty.
+
+
+
+[Pg 104]
+(He breaks off suddenly, goes eagerly to the now departing jailer,
+saying authoritatively.)
+
+
+
+Fellow, bring
+Here to my cell, some wax, a tool or two,
+Some clay, a lump, stuck in thy cap will do—
+A hand’s length of the white, Pentelic stone,
+From where it sleeps within the mountain, grown
+Pregnant by streams and flowers, for some birth
+Of wingéd dream, out of hypnotic earth.
+
+
+Jailer (backing mockingly away, mimics coarsely).
+A jewel, a star, a little bit of wax!
+Some tiny thing this mighty genius lacks!
+That pearl, perchance, Aspasia’s bosom decks,
+Or blood-red stones hung round Hetairæ-necks!
+
+
+Phidias (beseechingly). Only some clay, man, in the dark my touch
+Will fashion thee a goddess-image, such
+As still they place in niches, who obey
+“Sea-wards, oh! Mystæ,” on Eleusis-Way.
+I’ll mould thee woman’s hand, or horse’s head,
+A dreaming faun, Marsyas as he bled;
+A babe’s round, dimpled, saucy little back;
+A vine-wreathed satyr, with his grape-filled sack.
+
+
+Jailer (pompously drawing aloof). By Dionysus! that were illy done.[Pg 105]
+Artist is one thing. State another. Shun
+Thee and punish thee, doth Will of State,
+Who art no artist more, but he who late
+Sculptor to Pericles, now is a knave,
+Who sits and twists his thumbs in prison-cave!
+
+
+
+
+(The Jailer finishes by an insulting gesture and
+departs. Phidias going to the heavy door listens to
+his retreating footsteps. He draws a long sigh and, standing with his
+back to the door, looks up at the patch of blue sky, in silence. At
+last he speaks.)
+
+
+
+
+Thus they leave Phidias, worker in the bronze,
+Breather of life! breaker of chisel-bonds!
+He is, they think, a man, a common thing—
+All yellow, freckled, thin-blooded; they wring
+His soul, because of policies.
+Make him a sacrifice to fallacies;
+“Drop him,” they say, in any dungeon now;
+“Gods, grant in time his traitor’s neck shall bow
+To death, for that he trifled with the State!
+Strike his face from the shield where he dared mate
+That face with Pericles,”—Oh! lofty Hill
+High Sacred Rock, where sun-bathed columns thrill;
+Proud statue-gleaming, gold Acropolis;
+Dreamed I so high, to fall as low as—this?
+Athens, I made thee out of my heart’s blood;[Pg 106]
+Rising by ages, from Time’s ’whelming flood.
+Deucalion-fashion, soar my stones that sing
+The beauty of this age’s visioning.
+Out of Iktinos’ soul the Parthenon grew—
+Those glorious Doric shafts, that taper through
+The blaze of morn or eve. Athena’s shrine,
+Lodging her ivory maidenhood, is mine!
+’Twas I who gave the Lemnian her life,
+Knew god-like action whether peace or strife.
+Knew how a god would stand, breathe, smile, or frown,
+And by that knowledge, deities’ renown,
+I was a god-creator. Yet I lie
+Here in befoulèd darkness, with the sky
+Still burning blue upon the mountain tops
+Surrounding Athens; where the Sun-God stops
+Of evening, all his golden fingers laid
+On marble chords of rhythmic colonnade,
+And plays so strange, so Delphic-high a strain,
+That hopes ethereal fill men’s hearts again.
+Oh! Athens, marble glory, is it naught
+Phidias lived, and dreamed, and planned, and taught?
+
+
+
+
+(In his agony the Sculptor buries his head in his hands.
+There is a long silence, suddenly broken by the alighting of
+a Cricket upon the small grated window; the
+Cricket keeps up a steady trilling and is not at first
+noticed by the Sculptor.)
+
+[Pg 107]
+THE CRICKET
+
+
+
+Greet, greet, greet,
+Pan with hymning sweet.
+Wine and corn are here,
+Grapes and honey clear;
+Olives, purple-black,
+Burst from tawny sack.
+Through Olympian night
+Temples glimmer white
+Stars their tangled vines
+Wreathe around the shrines.
+Shepherds all alone
+Under mountain tree,
+By the midnight sea,
+Shall pipe songs of thee
+Singer in the stone!
+
+
+
+
+(Phidias listening intently, passes his hand over his
+eyes, creeps nearer under the grating, straining his gaze upward.)
+
+
+
+
+Prometheus! but I think this minstrel wrings
+Wise melody from gauzy zither-wings,
+A healing balm, like to the lustral wave
+At Delphi, comes my broken soul to lave.
+For, as he perches with his roundelay,
+Methinks he counsels me; not for to-day
+Only is artist-pride and feverish bliss—
+Perchance my spirit still may suffer this
+Infamy, yet go singing down the years!
+
+
+
+[Pg 108]
+
+(The Sculptor pauses doubtfully. Still looking upward, he presses
+closer beneath the little window.)
+
+
+
+
+Answer me, Cricket, are my stricken tears,
+My empty hands, proof of a thing to be,
+That I dreamed true? If Beauty nourished me,
+Mothered and saved; shall I in ages more
+Stand firm and proud, telling what guise she wore
+These days? For with young Myron I would hold
+There is a law of Beauty, which, controlled
+By men’s stern truth, becomes a sacred thing,
+Expanded from our holy cherishing.
+It is not static, cold, but lives and grows
+Out of the All of Life, the artist knows.
+
+
+
+
+(The Cricket after another silence, again chirps.
+This time the rhythm is feebler and grows fainter and fainter, as the
+Sculptor, face upwards, eagerly listens.)
+
+THE CRICKET
+
+
+
+Sweet, sweet, sweet,
+Praise is full and meet;
+O’er the architrave,
+Beautiful and brave,
+Strong and good and fair,
+Poise in hallowed air.[Pg 109]
+In the violet clime,
+In the winter rime,
+On the poppied steep,
+In the passes deep,
+All the temples know
+Paths that Greece shall go
+Toward posterities
+Far beyond the seas!
+Far as man is known,
+Thou shalt speak to men
+Far beyond thy ken,
+Beyond tongue or pen,
+Singer in the stone!
+
+
+
+
+(Phidias at the close of the lilt lifts both arms
+appealingly. The Cricket is silent a moment.)
+
+
+
+
+Phidias. Hist!—the green minstrel, god-of-little-things,
+Thinketh perchance he strums his lyric wings
+On dark Hymettus, where bees sip so long,
+They lose their way in all the flower throng,
+And many a little waxy dot of fuzz
+Is caught in honey-prison. (Whimsically.) Thou dost buzz
+Cricket, as loud as I, encased
+In this hard prison, bitter to my taste.
+
+
+
+
+(The Cricket after a long pause trills for the last
+time.)
+
+[Pg 110]
+
+
+
+Fleet, fleet, fleet,
+The ways of fame are sweet.
+A marble head of dreams
+Conquers the world, meseems.
+Beautiful vases tell
+How happy peoples dwell.
+Beautiful bodies speak
+New message to the weak.
+Greece adown the years
+Is the song of Seers.
+Kora still intones
+Nike still responds:
+“Wielder of the wands.”
+“Worker in the Bronze.”
+“Singer in the Stones.”
+
+
+
+
+
+
+Sculptor (suddenly and rapturously). Xaire! thou little herald, Xaire! thou
+Hast cheered me, saved me! See my courage now!
+What foul, damp cell can ever hold me here?
+What slander stain my work of yester-year?
+Upon the Hill my glowing children call
+To the unborn of Artists; to the All,
+Great Fusion of the races, who
+Shall yet unite, some holy thing to do,
+Before this strange world on its journey far
+In trackless space shall move an empty star.
+For portico and frieze and vase and fane.
+Fountain and stele, that our utmost main[Pg 111]
+Our utterest patience brought to perfect whole
+Will cast strange, spellful seed, and where the soul
+Of art is known, its free, broad, ardent wing,
+“Greece,” will be whispered like a sacred thing!
+(To the Cricket.) Yea, Yea! thou little herald, “wingèd pipe,”
+So I’ll indite thee in thy wisdom ripe—
+Now will I write my comrade young and lithe
+Pæonius, how I imprisoned writhe.
+Yet for his comfort will I softly tell
+The cricket message to my dreary cell.
+Luck! that I hid the chalk lump in my sleeve!
+Joy that I have the parchment! Who’ll believe
+That this is all he hath, who was the friend
+Of Pericles brought to this bitter end!
+
+
+
+
+(The Sculptor with the parchment on his knee, busies himself
+in writing. Occasionally he pauses and reads aloud what he has
+written.)
+
+
+
+
+Pæonius, good comrade, merry Greek,
+Walking Olympian groves, watching the freak
+Of scarlet-flowered pomegranate vine
+Tasting the cool jugs filled with pine-tree wine,
+Fruits like warm bowls of amber nectar hung
+And figs from branches o’er the streamlets flung—
+Read and reflect, and if thou com’st to see[Pg 112]
+Some supple scheme to set thy brother free,
+Act on it swiftly; only be advised
+Pericles’ day is over. What he prized
+Was proud display, but what the people want
+Is arms and ships that they may proudly vaunt.
+(Since Marathon no Greek knows how to smile
+Passing the Soros’ valiant hero-pile,
+And still they say in Sparta, athletes wait
+To teach barbarians how Greece is great.)
+I, the poor Sculptor, lived too near the throne,
+Therefore, I lie now on the dungeon stone!
+
+
+
+
+(Phidias’s gaze wanders, he becomes absorbed, intense,
+then once more he applies himself to the letter.)
+
+
+
+
+Last summer, passing Sunion, my sail
+Red-burning down the stormy silver trail
+O’er clouded blue, I humbly turned my sight
+Up to that white fane, on the bronzèd height,
+All its upspringing columns touched with sun
+As the slow golden clouds walked high upon
+Wave buttressed paths, to purple Cyclades
+Those mystic islands of Saronic seas.
+And as the molten sapphire round me sprayed
+O’er the eye-painted prow, I humbly prayed
+Poseidon, that Piræus I might gain;
+Offered no cock, no vase, oil to contain,
+But vowed a frieze from my young pupil’s skill,
+New, daring sculpture for the Sea-God’s Hill[Pg 113]
+In Parian marble, calm and haughty white,
+To gleam for sailors passing in the night.
+How I was timid then! who after dared
+Dispute with Pericles, and proudly shared
+His vast ambitions for that golden realm—
+That Athens, which the vulgar overwhelm.
+That I did promise, wilt thou execute?
+So will these singing stones, out of the mute
+Parian marble, form immortal choir
+Chanting “Poseidon” to the ocean’s lyre.
+
+
+
+
+(Phidias pauses once more. He draws a long sigh, then
+continues writing.)
+
+
+
+
+Well, brother-artist, here I agonized,
+Until a cricket, by great Zeus apprised,
+Perched on the window-bar and chirped a thing
+Wise as Athena, took away the sting
+Of the world’s serpent-sayings. Friend, I give
+Faith to the cricket message while I live.
+
+
+
+
+(The Sculptor, head in hands ponders deeply then again resumes
+writing.)
+
+
+
+
+He trilled, Pæonius, a theme like this:
+What we do lives, though after all the bliss
+Of our own living, must our bodies pass!
+Hast ever caught the perfume of sweet grass
+Dying beneath the sickle? Our breath goes
+Thus to the gods indifferent, ’mid the snows
+High on Parnassos’ or Kiona’s crest,[Pg 114]
+Where mountain after mountain heaves a breast,
+Black, billow-deep, sky-ranging, in a chain
+Tumultuously, serene around the plain.
+But what we make of beauty keeps its power
+Down the long years, from the conception’s hour.
+For mark ye, lad, I never sensed my work,
+But did it all unconscious; now in murk,
+In prison black, I see it flying forth,
+The strong wings of my friezes! All the worth
+Of Laurion silver in Colossi paid
+And proud Athena, ivory o’er laid.
+Gold-sandalled, springing, mellow-marble feet,
+Olive-crowned heads in pensive bending, sweet
+Backs, limbs, and bosoms! Noble eye and tress,
+Caught in the dream of their own loveliness—
+I see it all, so calm! “Nothing too much,”
+Tunics in solemn folds, majesty such
+As comes with purity; things strong and free;
+White to the sky and naked to the sea.
+Women and men that move adown the days
+Out of the forest deep, through shimmering maize,
+In fructifying suns, in cooling dews,—
+All tranquil, noble, filled with God, or Muse
+Of deathless Greece.—Yea, all my strife,
+My will, my soul, was this portrayal—Life!
+
+
+
+[Pg 115]
+(Moved by what he has written, the Sculptor gets to his feet and
+paces feverishly his narrow cell. He goes on writing as he walks and
+reading aloud.)
+
+
+
+
+I now see by prophetic cricket-voice
+That Life is deathless, that my works rejoice
+For all rejoicing. Brother mine
+We carve for worlds to come. Beyond the line
+Of horizons, untravelled, rise the lands
+Hungry of spirit, waiting at our hands
+Bread of True Vision. Yea, where rusty wars,
+Hot blood of nation-struggle, stain these shores,
+Women and men shall bleed with sacrifice
+To a dead god, called Progress, and the Vice
+Of chance-worship, on sickly, pampered knees
+And counting gold in languors of disease.
+Can’st picture these, coming to look upon
+My glorious horsemen of the Parthenon?
+Seeing your Nikes tread triumphant air?
+Our marble dreams forever beauty-clean
+And dark heroic bronzes stained with green,
+By fire and sword and water all unspoiled,
+Their perfect limbs’ clear candor unassoiled?
+Mark ye, those stranger eyes shall take and take,
+Still the thirst grow and still the joy to slake
+From Old-World beauty. Till we sculptors stand
+Supreme World-life within our pulseless hand![Pg 116]
+Think, lad, when father’s little ones shall tell
+How Greeks saw, felt, and struggled, conquered, fell!
+Fear not, Pæonius, our spirits win
+Out of this age to call all ages kin.
+
+
+
+
+(Phidias, sighing as one relieved of a burden, pauses
+awhile, then writes a few more lines.)
+
+
+
+
+Smile not upon this, friend—All fancy—Yea!
+But, by the Etruscans, gone but yesterday
+To Italy, and now established there;
+By Dorians, building temples by the fair
+Purple Tyrennian, so I think
+Greek soul o’erflows, as over fountain-brink,
+And that we circle out and out, our creed
+Begetting world-dream for an unborn breed,
+Ardent posterities!—Thus do I then
+Bid now farewell to my own race of men!
+And for a future permanence, new clime,
+Lift statues in the peristyles of Time
+And trust my message, where that message seeks
+Its own fulfillment. Hail to the happy Greeks
+Hail to that Race; keen, wistful, passionate,
+That shall know Greece, Athens, the gods, the State!
+
+
+
+
+(The paper hangs listlessly in the hand of Phidias,
+who sits in revery, lost to all around him.)
+
+[Pg 117]
+
+
+
+Jailer (entering). Rise! thou infamous sculptor! A decree!
+Follow! Thy haughty judges have demanded thee!
+
+
+
+
+(Phidias wearily rising, stares stupidly at him, then
+looks up to the little window where the Cricket
+perched and makes a slight gesture of salute and farewell.)
+
+
+
+
+Phidias.                                        “So be it.”
+(Hastily aside.) See this coin? Of all good fees
+The best, with head of high Themistocles—
+Thine—if thy hand this simple scroll wilt bear
+To the great sculptor at Olympia.
+To give to him my farewell words and tears,
+(The Sculptor pauses, looking unseeingly at the Jailer and adding softly.) As I pass outward—down the faithful years!
+
+
+
+
+
+[Pg 118]
+EPILOGUE
+
+
+
+
+As children keep
+Some spiraled shell or crystal crusted stone
+For wonder and for solace, when alone
+They fall asleep,
+
+
+So do I soft caress
+And guard through days of World-dark such a charm
+And cherish from indifference and harm
+One loveliness.
+
+
+And every Grecian vase
+And sculptured fragment to my eyes doth mean
+Life, calm and balanced, simple, and serene,
+Transcending Race!
+
+
+
+
+
+Transcriber’s Notes
+Obvious punctuation errors and omissions have been corrected.
+Page 37: “grim Thermoyplæ” changed to “grim Thermopylæ”
+Page 108: “the rythm is feebler” changed to “the rhythm is feebler”
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK GREEK WAYFARERS, AND OTHER POEMS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+
+
+
