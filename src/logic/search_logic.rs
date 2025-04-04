@@ -86,7 +86,7 @@ impl UserInput {
                 for v in dataset.iter() {
                     let value = String::from_utf8_lossy(v).into_owned(); // Convert to owned String
                     let search_term = self.search_term.as_str().trim();
-                    if value.contains(search_term) {
+                    if value != search_term && value.contains(search_term) && !value.starts_with(search_term) && !value.ends_with(search_term) {
                         let key = levenshtein(search_term, &value);
                         hashset.push((key as u16, value));
                     }
