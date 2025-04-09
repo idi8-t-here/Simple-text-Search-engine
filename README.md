@@ -82,7 +82,6 @@ Each type of search is supported by a specialized data structure:
    The engine tokenizes the user’s query based on the selected scope, performs the search based on the selected type, and returns results sorted by rank using Levenshtein distance.
 
 ---
-
 ## 🚀 Coming Soon
 
 - partitioning in order to avoid reserializing the whole dataset again
