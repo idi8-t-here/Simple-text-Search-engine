@@ -1,9 +1,4 @@
-[package]
-name = "Text_Seach_Engine"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = [ "data_structs", "compile", "runtime" , "app"]
 
-[dependencies]
-regex = "1.11.1"
-levenshtein = "=1.0.5"
-clap = { version = "4", features = ["derive"]}
+resolver = "2"
