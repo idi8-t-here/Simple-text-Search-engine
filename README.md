@@ -29,7 +29,7 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 | [Levenshtein](https://crates.io/crates/levenshtein)  | - For dictating the method by which we Rank search results |
 | [thiserror](https://crates.io/crates/thiserror)  | - For custom error definitions in codebase |
 | [bincode](https://crates.io/crates/bincode)  | - For processing dataset into binary  |
-| [clap](https://crates.io/crates/clap)  | - For augmenting UI experience |
+| [ratatui](https://crates.io/crates/ratatui)  | - For augmenting UI experience |
 
 ## Problem Breakdown
 
@@ -37,8 +37,8 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 
 An enum that defines the level of tokenization for searching.  
 Options:  
-- Words (i.e. tokenizing by characters)
-- Lines (i.e. tokenizing by words)
+1. Words (i.e. tokenizing by characters)
+2. Lines (i.e. tokenizing by words)
 
 **Solution**  
 To handle scope-based tokenization efficiently, we use the [Unicode Segmentation](https://crates.io/crates/unicode-segmentation) crate. It ensures proper segmentation of words and lines, respecting Unicode boundaries.
@@ -47,9 +47,9 @@ To handle scope-based tokenization efficiently, we use the [Unicode Segmentation
 
 An enum that defines the type of search to be conducted.  
 Options:  
-- Prefix
-- Suffix
-- Contains
+1. Prefix
+2. Suffix
+3. Contains
 
 **Solution**  
 Each type of search is supported by a specialized data structure:
