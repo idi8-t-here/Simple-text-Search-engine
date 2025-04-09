@@ -1,9 +1,9 @@
-# 🔍 Simple Text Search Engine
+# Simple Text Search Engine
 
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
 
-## ✨ Features
+## Features
 
 - Supports **prefix**, **suffix**, and **contains** based searches  
 - Tokenization by **words** or **lines** using Unicode-aware segmentation  
@@ -11,7 +11,7 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 - Serialization of processed dataset for faster lookups at runtime  
 - CLI support for seamless interaction
 
-## 📦 Implementation Details
+## Implementation Details
 
 ### Resources Used
 
@@ -31,7 +31,7 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 | [bincode](https://crates.io/crates/bincode)  | - For processing dataset into binary  |
 | [clap](https://crates.io/crates/clap)  | - For augmenting UI experience |
 
-## 🧠 Problem Breakdown
+## Problem Breakdown
 
 ### SEARCH_SCOPE
 
@@ -58,7 +58,7 @@ Each type of search is supported by a specialized data structure:
 - **Suffix Search** → [Suffix Tree](https://en.m.wikipedia.org/wiki/Suffix_tree)  
 - **Contains Search** → [Inverted Index](https://en.wikipedia.org/wiki/Inverted_index)
 
-## ⚙️ How It Works
+## How It Works
 
 1. **Build Phase:**  
    Pre-compilation hooks process and serialize the dataset into three optimized data structures (Radix Tree, Suffix Tree, Inverted Index) using `bincode`.
