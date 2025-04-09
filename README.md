@@ -31,8 +31,6 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 | [bincode](https://crates.io/crates/bincode)  | - For processing dataset into binary  |
 | [clap](https://crates.io/crates/clap)  | - For augmenting UI experience |
 
----
-
 ## 🧠 Problem Breakdown
 
 ### SEARCH_SCOPE
