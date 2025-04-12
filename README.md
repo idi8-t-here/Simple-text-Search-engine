@@ -21,9 +21,9 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 
 | List of resources we will use | Why? |
 | ------------- | ---|
-| [Radix tree wiki](https://en.wikipedia.org/wiki/Radix_tree) | - For PREFIX_SEARCH Implemetation  |
+| [Trie tree wiki](https://en.wikipedia.org/wiki/Trie) | - For PREFIX_SEARCH Implemetation  |
 | [Suffix tree wiki](https://en.m.wikipedia.org/wiki/Suffix_tree) | - For SUFFIX_SEARCH Implemetation |
-| [Inverted index wiki](https://en.wikipedia.org/wiki/Inverted_index) | - For CONTAINS_SEARCH Implemetation |
+| [N-gram wiki](https://en.wikipedia.org/wiki/N-gram) | - For CONTAINS_SEARCH Implemetation |
 
 ### Crates Used
 

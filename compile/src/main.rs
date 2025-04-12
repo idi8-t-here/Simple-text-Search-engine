@@ -10,13 +10,13 @@ fn main() {
     let dataset_path = Path::new("./Dataset/output.txt");
 
     let dataset = fs::read_to_string(dataset_path).unwrap();
-    let lines = dataset.split('\n').collect::<Vec<&str>>();
-    let words = dataset.unicode_words().collect::<Vec<&str>>();
+    let dataset_lines = dataset.split('\n').collect::<Vec<&str>>();
+    let dataset_words = dataset.unicode_words().collect::<Vec<&str>>();
 
     let mut trie_lines = Trie::new();
-    for item in lines {
-        if item.len() > 32768 { continue; }  
-        trie_lines.store(item.to_string());
+    for lines in dataset_lines {
+        if lines.len() > 32768 { continue; }  
+        trie_lines.store(lines.to_string());
     }
 
     let serialized_lines = bincode::encode_to_vec(trie_lines, config::standard()).unwrap();
@@ -26,9 +26,9 @@ fn main() {
     new.write_all(&serialized_lines).unwrap();
 
     let mut trie_words = Trie::new();
-    for item in words {
-        if item.len() > 255 { continue; }  
-        trie_words.store(item.to_string());
+    for words in dataset_words {
+        if words.len() > 255 { continue; }  
+        trie_words.store(words.to_string());
     }
 
     let serialized_words = bincode::encode_to_vec(trie_words, config::standard()).unwrap();

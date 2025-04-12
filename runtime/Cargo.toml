@@ -6,6 +6,7 @@ default-run = "runtime"
 
 [dependencies]
 rand = "^0.8.5"
+chrono = "0.4"
 tui = { package = "ratatui", version = "0.23.0", features = ["all-widgets"]}
 crossterm = "0.29.0"
 clap = { version = "4", features = ["derive"] }
