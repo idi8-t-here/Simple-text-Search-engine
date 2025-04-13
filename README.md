@@ -1,4 +1,4 @@
-# 🔍 Simple Text Search Engine
+e 🔍 Simple Text Search Engine
 
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
@@ -64,14 +64,14 @@ Each type of search is supported by a specialized data structure:
 
 - **Prefix Search** → [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)  
 - **Suffix Search** → [Suffix Tree](https://en.m.wikipedia.org/wiki/Suffix_tree)  
-- **Contains Search** → [Inverted Index](https://en.wikipedia.org/wiki/Inverted_index)
+- **Contains Search** → [N-gram(digrams..by default)](https://en.wikipedia.org/wiki/N-gram)
 
 ---
 
 ## ⚙️ How It Works
 
 1. **Build Phase:**  
-   Pre-compilation hooks process and serialize the dataset into three optimized data structures (Radix Tree, Suffix Tree, Inverted Index) using `bincode`.
+   Pre-compilation hooks process and serialize the dataset into three optimized data structures (Radix Tree, Suffix Tree, N gram) using `bincode`.
 
 2. **Runtime Phase:**  
    User is prompted to select:
@@ -85,4 +85,4 @@ Each type of search is supported by a specialized data structure:
 
 ## 🚀 Coming Soon
 
-- partitioning in order to avoid reserializing the whole dataset again
+- [ ] partitioning in order to avoid reserializing the whole dataset again

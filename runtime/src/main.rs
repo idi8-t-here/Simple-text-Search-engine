@@ -22,8 +22,11 @@ use tui::{
 };
 use bincode::config;
 use levenshtein::levenshtein;
-use data_structs::trees::trie::Trie;
+
 use unicode_segmentation::UnicodeSegmentation;
+
+use data_structs::trees::trie::Trie;
+use data_structs::trees::ngram::NGramIndex;
 
 #[derive(Debug)]
 enum SearchType {
@@ -384,47 +387,104 @@ fn perform_search(app: &mut App, scope: Scope, search_type: SearchType, term: St
     let type_path = match search_type {
         SearchType::Prefix => "trie-serial.bin",
         SearchType::Suffix => "suffix-serial.bin",
-        SearchType::Contains => "inverted-serial.bin",
+        SearchType::Contains => "ngram-serial.bin",
     };
+
 
     let path = format!("./serialized_outputs/{}/{}", scope_path, type_path);
     let file_path = Path::new(&path);
     
     app.add_debug_message(format!("Searching in file: {}", path));
+    let message = match search_type {
+        SearchType::Contains => "TRIE decoded successfully".to_string(),
+        SearchType::Suffix => "SUFFIX decoded successfully".to_string(),
+        SearchType::Prefix => "NGRAM decoded successfully".to_string(),
+    };
     
+
     if let Ok(contents) = fs::read(file_path) {
-        app.add_debug_message("File read successfully".to_string());
-        if let Ok((trie, _)) = bincode::decode_from_slice::<Trie, _>(&contents, config::standard()) {
-            app.add_debug_message("Trie decoded successfully".to_string());
-            if let Ok(search_results) = trie.search(term.to_string()) {
-                let results = search_results.unwrap();
-                
-                for item in results.iter() {
-                    if matches!(scope, Scope::Lines) {
-                        let lines_scope = item.unicode_words().collect::<Vec<&str>>();
-                        if let Some(first_word) = lines_scope.first() {
-                            if *first_word.to_lowercase() == term.to_lowercase() {
-                                app.add_debug_message(format!("MATCH: first_word='{}', term='{}', full_line='{}'", 
-                                    first_word, term, item));
-                                    let priority = levenshtein(&term, item);
-                                    sorted_result.push((priority as u8, item.to_string()));
-                            } else {
-                                app.add_debug_message(format!("FAILED: first_word='{}', term='{}', full_line='{}'", 
-                                    first_word, term, item));
+        let results = match search_type {
+            SearchType::Contains => {
+                match bincode::decode_from_slice::<NGramIndex, _>(&contents, config::standard()) {
+                    Ok((tree, _)) => {
+                        match tree.search(term.to_string()) {
+                            Ok(search_results) => search_results,
+                            Err(e) => {
+                                app.add_debug_message(format!("Search failed: {}", e));
+                                return Vec::new();
                             }
-                        } else {
-                            app.add_debug_message(format!("Empty line or no words found in: '{}'", item));
                         }
-                    } else {
-                        let priority = levenshtein(&term, item);
-                        sorted_result.push((priority as u8, item.to_string()));
+                    },
+                    Err(e) => {
+                        app.add_debug_message(format!("Failed to decode NGramIndex: {}", e));
+                        return Vec::new();
                     }
                 }
-            } else {
-                app.add_debug_message("Search failed".to_string());
+            },
+            SearchType::Suffix => {
+                match bincode::decode_from_slice::<NGramIndex, _>(&contents, config::standard()) {
+                    Ok((tree, _)) => {
+                        match tree.search(term.to_string()) {
+                            Ok(search_results) => search_results,
+                            Err(e) => {
+                                app.add_debug_message(format!("Search failed: {}", e));
+                                return Vec::new();
+                            }
+                        }
+                    },
+                    Err(e) => {
+                        app.add_debug_message(format!("Failed to decode NGramIndex: {}", e));
+                        return Vec::new();
+                    }
+                }
+            },
+            SearchType::Prefix => {
+                match bincode::decode_from_slice::<Trie, _>(&contents, config::standard()) {
+                    Ok((tree, _)) => {
+                        match tree.search(term.to_string()) {
+                            Ok(search_results) => search_results,
+                            Err(e) => {
+                                app.add_debug_message(format!("Search failed: {}", e));
+                                return Vec::new();
+                            }
+                        }
+                    },
+                    Err(e) => {
+                        app.add_debug_message(format!("Failed to decode NGramIndex: {}", e));
+                        return Vec::new();
+                    }
+                }
             }
-        } else {
-            app.add_debug_message("Failed to decode trie".to_string());
+        };
+
+        app.add_debug_message("File read successfully".to_string());
+        app.add_debug_message(message);
+        let results = results.unwrap();
+        for item in results.iter() {
+            if matches!(scope, Scope::Lines) {
+                let lines_scope = item.unicode_words().collect::<Vec<&str>>();
+                if let (Some(first_word),Some(last_word)) = (lines_scope.first(),lines_scope.last()) {
+                    let condition = match search_type {
+                        SearchType::Contains => *first_word.to_lowercase() != term.to_lowercase() && *last_word.to_lowercase() != term.to_lowercase(),
+                        SearchType::Suffix => *last_word.to_lowercase() == term.to_lowercase() && *last_word.to_lowercase() != term.to_lowercase(),
+                        SearchType::Prefix => *first_word.to_lowercase() == term.to_lowercase(),
+                    };
+                    if condition {
+                        app.add_debug_message(format!("MATCH: first_word='{}', term='{}', full_line='{}'", 
+                            first_word, term, item));
+                            let priority = levenshtein(&term, item);
+                            sorted_result.push((priority as u8, item.to_string()));
+                    } else {
+                        app.add_debug_message(format!("FAILED: first_word='{}', term='{}', full_line='{}'", 
+                            first_word, term, item));
+                    }
+                } else {
+                    app.add_debug_message(format!("Empty line or no words found in: '{}'", item));
+                }
+            } else {
+                let priority = levenshtein(&term, item);
+                sorted_result.push((priority as u8, item.to_string()));
+            }
         }
     } else {
         app.add_debug_message("Failed to read file".to_string());

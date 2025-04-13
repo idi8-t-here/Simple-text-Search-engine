@@ -15,6 +15,7 @@ impl Default for Trie {
 }
 
 impl Trie {
+
     pub fn new() -> Self {
         Self {
             children: std::array::from_fn(|_| None),
@@ -23,7 +24,6 @@ impl Trie {
             count: 0,
         }
     }
-
     
     pub fn store(&mut self, key: String) {
         let mut node = self;
@@ -63,7 +63,6 @@ impl Trie {
             node.count = 1; // Start the count for this word at 1
         }
     }
-
 
     pub fn search(&self, prefix: String) -> Result<Option<Vec<String>>, String> {
         let mut node = self;
