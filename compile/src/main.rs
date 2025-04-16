@@ -1,4 +1,4 @@
-use std::{fs::{self, File}, io::Write};
+use std::{fs::{self, File}, io::Write, time::Instant};
 use bincode::config;
 use unicode_segmentation::UnicodeSegmentation;
 use std::path::Path;
@@ -6,12 +6,16 @@ use std::path::Path;
 use data_structs::trees;
 use trees::trie::Trie;
 
+use trees::suffix::SuffixTree;
+use trees::suffix::SearchScopeSuffix;
+
 use trees::ngram::NGramIndex;
-use trees::ngram::SearchScope;
+use trees::ngram::SearchScopeNgram;
 
 enum Trees {
-    NGramIndex,
     Trie,
+    Suffix,
+    NGramIndex,
 }
 
 enum Scope {
@@ -20,7 +24,7 @@ enum Scope {
 }
 
 fn process_data(trees: Trees, search_scope: Scope) {
-    let dataset_path = Path::new("./Dataset/output.txt");
+    let dataset_path = Path::new("./Dataset/words.txt");
     let dataset = fs::read_to_string(dataset_path).unwrap();
 
     // Select dataset and set limits
@@ -39,10 +43,23 @@ fn process_data(trees: Trees, search_scope: Scope) {
             }
             bincode::encode_to_vec(trie, config::standard()).unwrap()
         }
+
+        Trees::Suffix => {
+            let mut suffix = SuffixTree::new();
+            if let Scope::Line = search_scope {
+                suffix.search_type = SearchScopeSuffix::Lines;
+            }
+            for token in chosen_dataset.iter() {
+                if token.len() > limit { continue; }
+                suffix.store(vec![token]);
+            }
+            bincode::encode_to_vec(suffix, config::standard()).unwrap()
+        }
+        
         Trees::NGramIndex => {
             let mut ngram = NGramIndex::new();
             if let Scope::Line = search_scope {
-                ngram.search_type = SearchScope::Lines;
+                ngram.search_type = SearchScopeNgram::Lines;
             }
             for token in chosen_dataset.iter() {
                 if token.len() > limit { continue; }
@@ -60,6 +77,7 @@ fn process_data(trees: Trees, search_scope: Scope) {
 
     let type_path = match trees {
         Trees::Trie => "trie-serial.bin",
+        Trees::Suffix => "suffix-serial.bin",
         Trees::NGramIndex => "ngram-serial.bin",
     };
 
@@ -71,9 +89,15 @@ fn process_data(trees: Trees, search_scope: Scope) {
 }
 
 fn main() {
+    let now = Instant::now();
     process_data(Trees::Trie, Scope::Line);
     process_data(Trees::Trie, Scope::Word);
 
+    process_data(Trees::Suffix, Scope::Line);
+    process_data(Trees::Suffix, Scope::Word);
+
     process_data(Trees::NGramIndex, Scope::Line);
     process_data(Trees::NGramIndex, Scope::Word);
+    let time_taken = now.elapsed().as_secs_f32();
+    eprintln!("Time taken to process document - {}",time_taken);
 }

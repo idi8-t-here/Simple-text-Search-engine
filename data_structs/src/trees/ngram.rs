@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use std::{cmp::Ordering,collections::{HashMap, HashSet}};
 use unicode_segmentation::UnicodeSegmentation;
 use bincode::{Encode,Decode};
 
@@ -7,11 +7,11 @@ pub struct NGramIndex {
     grams: Option<HashMap<Vec<String>, Vec<usize>>>,
     words: Option<Vec<String>>,
     gram_size: usize,
-    pub search_type: SearchScope,
+    pub search_type: SearchScopeNgram,
 }
 
 #[derive(Encode, Decode, Debug)]
-pub enum SearchScope {
+pub enum SearchScopeNgram {
     Words,
     Lines,
 }
@@ -29,7 +29,7 @@ impl NGramIndex {
             grams: None, 
             words: None, 
             gram_size: 2, 
-            search_type: SearchScope::Words
+            search_type: SearchScopeNgram::Words
         }
     }
 
@@ -38,11 +38,11 @@ impl NGramIndex {
         let line_segment = key.unicode_words().map(|x| x.to_string()).collect::<Vec<String>>();
 
         let key_length = match ngram.search_type {
-            SearchScope::Words => {
+            SearchScopeNgram::Words => {
                 // For words, we need to count graphemes (visible characters)
                 key.graphemes(true).count()
             },
-            SearchScope::Lines => line_segment.len(),
+            SearchScopeNgram::Lines => line_segment.len(),
         };
 
         if ngram.words.is_none() {
@@ -50,7 +50,7 @@ impl NGramIndex {
 
             for index in (ngram.gram_size - 1)..key_length {
                 match ngram.search_type {
-                    SearchScope::Words => {
+                    SearchScopeNgram::Words => {
                         // Get graphemes properly
                         let graphemes: Vec<&str> = key.graphemes(true).collect();
                         if index + ngram.gram_size > graphemes.len() {
@@ -60,7 +60,7 @@ impl NGramIndex {
                         let keys: Vec<String> = vec![word_segment];
                         new_hash.insert(keys.clone(), vec![0]);
                     },
-                    SearchScope::Lines => {
+                    SearchScopeNgram::Lines => {
                         if index + ngram.gram_size > line_segment.len() {
                             continue;
                         }
@@ -74,7 +74,7 @@ impl NGramIndex {
         } else {
             for index in (ngram.gram_size - 1)..key_length {
                 match ngram.search_type {
-                    SearchScope::Words => {
+                    SearchScopeNgram::Words => {
                         let graphemes: Vec<&str> = key.graphemes(true).collect();
                         if index + ngram.gram_size > graphemes.len() {
                             continue;
@@ -86,7 +86,7 @@ impl NGramIndex {
                             .and_modify(|v| v.push(ngram.words.as_ref().unwrap().len()))
                             .or_insert(vec![ngram.words.as_ref().unwrap().len()]);
                     },
-                    SearchScope::Lines => {
+                    SearchScopeNgram::Lines => {
                         if index + ngram.gram_size > line_segment.len() {
                             continue;
                         }
@@ -102,14 +102,34 @@ impl NGramIndex {
         }
     }
 
-    pub fn search(&self, key: String) -> Result<Option<Vec<String>>, &str> {
+    pub fn search(&self, key: String) -> Result<Vec<String>, &str> {
         let ngram = self;
         let mut results = HashSet::new(); 
 
         for (key_in_gram, values) in ngram.grams.as_ref().unwrap().iter() {
             let condition = match ngram.search_type {
-                SearchScope::Words => key_in_gram.iter().any(|x| x.contains(&key)),
-                SearchScope::Lines => key_in_gram.contains(&key),
+                SearchScopeNgram::Words => {
+                    match key.len().cmp(&ngram.gram_size) {
+                        Ordering::Less => key_in_gram.iter().any(|x| x.contains(&key)),
+                        Ordering::Equal => key_in_gram.iter().any(|x| x == &key),
+                        Ordering::Greater => false
+                    }
+                },
+                SearchScopeNgram::Lines => {
+                    let key_parts: Vec<&str> = key.split_whitespace().collect();
+                    match key_parts.len().cmp(&ngram.gram_size) {
+                        Ordering::Less => {
+                            let joined = key_in_gram.join(" ");
+                            let words: Vec<&str> = joined.split_whitespace().collect();
+                            words.iter().any(|word| word == &key)
+                        },
+                        Ordering::Equal => {
+                            let joined = key_in_gram.join(" ");
+                            joined == key
+                        },
+                        Ordering::Greater => false
+                    }
+                },
             };
             if condition {
                 for value in values.iter() {
@@ -125,7 +145,7 @@ impl NGramIndex {
         if results.is_empty() {
             Err("couldn't find a match mate")
         } else {
-            Ok(Some(results.into_iter().collect())) 
+            Ok(results.into_iter().collect()) 
         }
     }
 }

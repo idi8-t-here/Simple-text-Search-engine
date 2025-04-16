@@ -64,7 +64,7 @@ impl Trie {
         }
     }
 
-    pub fn search(&self, prefix: String) -> Result<Option<Vec<String>>, String> {
+    pub fn search(&self, prefix: String) -> Result<Vec<String>, String> {
         let mut node = self;
         
         // Traverse to the end of the prefix
@@ -84,7 +84,7 @@ impl Trie {
         if results.is_empty() {
             Err("No words found".to_string())
         } else {
-            Ok(Some(results))
+            Ok(results)
         }
     }
     

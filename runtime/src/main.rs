@@ -15,7 +15,7 @@ use tui::{
     backend::CrosstermBackend,
     layout::{Constraint, Direction, Layout},
     widgets::{Block, Borders, Paragraph, List, ListItem, ListState},
-    text::Span,
+    text::{Span,Line},
     Terminal,
     style::{Style, Color},
     Frame,
@@ -25,8 +25,11 @@ use levenshtein::levenshtein;
 
 use unicode_segmentation::UnicodeSegmentation;
 
-use data_structs::trees::trie::Trie;
-use data_structs::trees::ngram::NGramIndex;
+use data_structs::trees;
+
+use trees::trie::Trie;
+use trees::suffix::SuffixTree;
+use trees::ngram::NGramIndex;
 
 #[derive(Debug)]
 enum SearchType {
@@ -259,17 +262,43 @@ fn ui<B: tui::backend::Backend>(frame: &mut Frame<B>, app: &mut App) {
             let items: Vec<ListItem> = app.results.iter()
                 .enumerate()
                 .map(|(i, term)| {
-                    ListItem::new(format!("#{} -> {}", i + 1, term))
-                        .style(Style::default().fg(Color::Yellow))
+                    let prefix = format!("#{} -> ", i + 1);
+                    let term_lower = term.to_lowercase();
+                    let search_term = app.input_term.trim().to_lowercase();
+                    let is_selected = app.result_state.selected() == Some(i);
+                    
+                    let line = if is_selected {
+                        if let Some(start_idx) = term_lower.find(&search_term) {
+                            Line::from(vec![
+                                Span::styled(prefix, Style::default().fg(Color::Yellow)),
+                                Span::styled(&term[..start_idx], Style::default().fg(Color::Yellow)),
+                                Span::styled(&term[start_idx..start_idx + search_term.len()], 
+                                    Style::default().fg(Color::Green)),
+                                Span::styled(&term[start_idx + search_term.len()..], 
+                                    Style::default().fg(Color::Yellow))
+                            ])
+                        } else {
+                            Line::from(vec![
+                                Span::styled(prefix, Style::default().fg(Color::Yellow)),
+                                Span::styled(term, Style::default().fg(Color::Yellow))
+                            ])
+                        }
+                    } else {
+                        Line::from(vec![
+                            Span::styled(prefix, Style::default().fg(Color::Yellow)),
+                            Span::styled(term, Style::default().fg(Color::Yellow))
+                        ])
+                    };
+
+                    ListItem::new(line)
                 })
                 .collect();
 
             let list = List::new(items)
                 .block(Block::default()
                     .borders(Borders::ALL)
-                    .title("Results (Up/Down to scroll, CTRL+C to quit)")
-                    .style(Style::default().fg(Color::Green)))
-                .highlight_style(Style::default().fg(Color::LightGreen));
+                    .title("Results (Up/Down to scroll, CTRL+C to quit)"))
+                .highlight_style(Style::default());
             frame.render_stateful_widget(list, chunks[4], &mut app.result_state);
         }
         _ => {
@@ -396,9 +425,9 @@ fn perform_search(app: &mut App, scope: Scope, search_type: SearchType, term: St
     
     app.add_debug_message(format!("Searching in file: {}", path));
     let message = match search_type {
-        SearchType::Contains => "TRIE decoded successfully".to_string(),
+        SearchType::Prefix => "TRIE decoded successfully".to_string(),
         SearchType::Suffix => "SUFFIX decoded successfully".to_string(),
-        SearchType::Prefix => "NGRAM decoded successfully".to_string(),
+        SearchType::Contains => "NGRAM decoded successfully".to_string(),
     };
     
 
@@ -422,10 +451,10 @@ fn perform_search(app: &mut App, scope: Scope, search_type: SearchType, term: St
                 }
             },
             SearchType::Suffix => {
-                match bincode::decode_from_slice::<NGramIndex, _>(&contents, config::standard()) {
+                match bincode::decode_from_slice::<SuffixTree, _>(&contents, config::standard()) {
                     Ok((tree, _)) => {
-                        match tree.search(term.to_string()) {
-                            Ok(search_results) => search_results,
+                        match tree.search(&term) {
+                            Ok(search_results) => search_results.iter().map(|x| x.to_string()).collect(),
                             Err(e) => {
                                 app.add_debug_message(format!("Search failed: {}", e));
                                 return Vec::new();
@@ -459,24 +488,23 @@ fn perform_search(app: &mut App, scope: Scope, search_type: SearchType, term: St
 
         app.add_debug_message("File read successfully".to_string());
         app.add_debug_message(message);
-        let results = results.unwrap();
         for item in results.iter() {
             if matches!(scope, Scope::Lines) {
                 let lines_scope = item.unicode_words().collect::<Vec<&str>>();
                 if let (Some(first_word),Some(last_word)) = (lines_scope.first(),lines_scope.last()) {
-                    let condition = match search_type {
-                        SearchType::Contains => *first_word.to_lowercase() != term.to_lowercase() && *last_word.to_lowercase() != term.to_lowercase(),
-                        SearchType::Suffix => *last_word.to_lowercase() == term.to_lowercase() && *last_word.to_lowercase() != term.to_lowercase(),
-                        SearchType::Prefix => *first_word.to_lowercase() == term.to_lowercase(),
+                    let (condition,var) = match search_type {
+                        SearchType::Contains => (*first_word.to_lowercase() != term.to_lowercase() && *last_word.to_lowercase() != term.to_lowercase(), last_word),
+                        SearchType::Suffix => (*last_word.to_lowercase() == term.to_lowercase(),last_word),
+                        SearchType::Prefix => (*first_word.to_lowercase() == term.to_lowercase(),first_word),
                     };
                     if condition {
-                        app.add_debug_message(format!("MATCH: first_word='{}', term='{}', full_line='{}'", 
-                            first_word, term, item));
+                        app.add_debug_message(format!("MATCH: word='{}', term='{}', full_line='{}'", 
+                            var, term, item));
                             let priority = levenshtein(&term, item);
                             sorted_result.push((priority as u8, item.to_string()));
                     } else {
-                        app.add_debug_message(format!("FAILED: first_word='{}', term='{}', full_line='{}'", 
-                            first_word, term, item));
+                        app.add_debug_message(format!("FAILED: word='{}', term='{}', full_line='{}'", 
+                            var, term, item));
                     }
                 } else {
                     app.add_debug_message(format!("Empty line or no words found in: '{}'", item));
@@ -490,7 +518,7 @@ fn perform_search(app: &mut App, scope: Scope, search_type: SearchType, term: St
         app.add_debug_message("Failed to read file".to_string());
     }
 
-    sorted_result.sort_by_key(|(priority, _)| *priority);
+    sorted_result.sort();
     sorted_result.truncate(100);
     app.add_debug_message(format!("Final results count: {}", sorted_result.len()));
     sorted_result
