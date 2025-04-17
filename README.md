@@ -1,4 +1,4 @@
-e 🔍 Simple Text Search Engine
+🔍 Simple Text Search Engine
 
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
@@ -33,7 +33,7 @@ The engine leverages advanced data structures and popular Rust crates to efficie
 | [Levenshtein](https://crates.io/crates/levenshtein)  | - For dictating the method by which we Rank search results |
 | [thiserror](https://crates.io/crates/thiserror)  | - For custom error definitions in codebase |
 | [bincode](https://crates.io/crates/bincode)  | - For processing dataset into binary  |
-| [clap](https://crates.io/crates/clap)  | - For augmenting UI experience |
+| [ratatui](https://crates.io/crates/ratatui)  | - For augmenting UI experience |
 
 ---
 
