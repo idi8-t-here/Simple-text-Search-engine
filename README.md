@@ -1,4 +1,4 @@
-🔍 Simple Text Search Engine
+## 🔍 Simple Text Search Engine
 
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
