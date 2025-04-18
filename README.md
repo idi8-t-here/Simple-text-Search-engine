@@ -28,7 +28,7 @@ We conducted extensive benchmarking of our search implementations against Tantiv
 
 Our specialized search implementations consistently outperform Tantivy by a significant margin, being approximately 19x faster. That nice but it's important to ...
  
-**NOTE** While our implementation shows superior performance for this specific use case, Tantivy is a full-featured search engine with additional capabilities beyond simple term searching. These benchmarks focus solely on search speed for single-term queries.
+**NOTE.** <br/>While our implementation shows superior performance for this specific use case, Tantivy is a full-featured search engine with additional capabilities beyond simple term searching. These benchmarks focus solely on search speed for single-term queries.
 
 All benchmarks were conducted using Criterion.rs with 100 samples per measurement, including warm-up periods and statistical analysis for reliable results.
 
