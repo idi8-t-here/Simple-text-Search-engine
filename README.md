@@ -3,6 +3,35 @@
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
 
+## Benchmarks
+
+### Search Performance
+
+We conducted extensive benchmarking of our search implementations against Tantivy, a popular Rust search engine. All benchmarks were performed on a dataset of 466,550 words, searching for the term "the".
+
+#### Our Implementation
+
+| Search Type | Mean Results(min-avg-max) |
+| -------------- | --------------- |
+| Trie + Word: | ( 931.29 ns - **935.72 ns** - 940.80 ns ) (~0.94 µs) |
+| Trie + Line: | ( 963.35 ns - **967.41 ns** - 971.61 ns ) (~0.97 µs) |
+| Suffix + Word: | ( 1.0018 µs - **1.0047 µs** - 1.0077 µs ) |
+| Suffix + Line: | ( 1.0050 µs - **1.0075 µs** - 1.0100 µs )|
+|NGram + Word: |  ( 981.57 ns - **984.63 ns** - 987.78 ns ) (~0.98 µs)|
+|NGram + Line: | ( 1.0078 µs - **1.0101 µs** - 1.0126 µs )|
+
+#### Tantivy
+
+| Search Type | Mean Results(min-avg-max) |
+| -------------- | --------------- |
+| Term - Search: | ( 18.833 µs - **18.877 µs** - 18.959 µs )  |
+
+> [!warning] Note
+> Our specialized search implementations consistently outperform Tantivy by a significant margin, being approximately 19x faster. 
+> While our implementation shows superior performance for this specific use case, Tantivy is a full-featured search engine with additional capabilities beyond simple term searching. These benchmarks focus solely on search speed for single-term queries.
+
+All benchmarks were conducted using Criterion.rs with 100 samples per measurement, including warm-up periods and statistical analysis for reliable results.
+
 ## Features
 
 - Supports **prefix**, **suffix**, and **contains** based searches  
@@ -21,38 +50,13 @@ for first time run, this runs both the compile and runtime app on after another 
 cargo run
 ```
 
-## Benchmarks
-
-### Search Performance
-
-We conducted extensive benchmarking of our search implementations against Tantivy, a popular Rust search engine. All benchmarks were performed on a dataset of 466,550 words, searching for the term "the".
-
-#### Our Implementation
-
-## Implementation Details
-
-Trie + Word: 935.72 ns (~0.94 µs)
-Trie + Line: 967.41 ns (~0.97 µs)
-Suffix + Word: 1.0047 µs
-Suffix + Line: 1.0075 µs
-NGram + Word: 984.63 ns (~0.98 µs)
-NGram + Line: 1.0101 µs
-
-#### Tantivy
-
-Search 'the': 18.877 µs
-
-Our specialized search implementations consistently outperform Tantivy by a significant margin, being approximately 19x faster. The Trie-based word search shows the best performance at 935.72 nanoseconds, while all our search variants maintain sub-microsecond response times.
-
 ### Key Findings:
 - **Fastest Implementation**: Trie + Word search at 935.72 ns
 - **Slowest Implementation**: NGram + Line search at 1.0101 µs
 - **Consistency**: All our search variants perform within a tight range (935-1010 ns)
 - **Comparison**: Our slowest implementation (1.01 µs) is still 18.7x faster than Tantivy (18.88 µs)
 
-Note: While our implementation shows superior performance for this specific use case, Tantivy is a full-featured search engine with additional capabilities beyond simple term searching. These benchmarks focus solely on search speed for single-term queries.
-
-All benchmarks were conducted using Criterion.rs with 100 samples per measurement, including warm-up periods and statistical analysis for reliable results.
+## Implementation Details
 
 ### Resources Used
 
