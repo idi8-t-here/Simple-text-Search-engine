@@ -1,8 +1,8 @@
-use std::path::Path;
-use std::fs;
-use unicode_segmentation::UnicodeSegmentation;
 use bincode::config;
+use std::fs;
+use std::path::Path;
 use std::sync::mpsc::Sender;
+use unicode_segmentation::UnicodeSegmentation;
 
 use levenshtein::levenshtein;
 
@@ -131,26 +131,9 @@ pub fn perform_search(
                         SearchType::Prefix => *first_word.to_lowercase() == term.to_lowercase(),
                     };
                     if condition {
-                        debug_sender.send(AppMessage::Debug(format!(
-                            "MATCH: word='{}', term='{}', full_line='{}'",
-                            if matches!(search_type, SearchType::Prefix) { first_word } else { last_word },
-                            term,
-                            item
-                        ))).unwrap();
                         let priority = levenshtein(term, item);
                         sorted_result.push((priority as u8, item.to_string()));
-                    } else {
-                        debug_sender.send(AppMessage::Debug(format!(
-                            "FAILED: word='{}', term='{}', full_line='{}'",
-                            if matches!(search_type, SearchType::Prefix) { first_word } else { last_word },
-                            term,
-                            item
-                        ))).unwrap();
                     }
-                } else {
-                    debug_sender.send(AppMessage::Debug(
-                        format!("Empty line or no words found in: '{}'", item)
-                    )).unwrap();
                 }
             } else {
                 let priority = levenshtein(term, item);

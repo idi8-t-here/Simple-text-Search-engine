@@ -1,3 +1,10 @@
+https://github.com/user-attachments/assets/f93d5c36-077f-4386-bafc-4134a946df2e 
+    prefix search
+https://github.com/user-attachments/assets/78e762c1-e159-4354-9f44-442b66cb4cca 
+    contains search
+https://github.com/user-attachments/assets/bea61304-4d66-4cf3-9790-9edc8d250ef9 
+    suffix search
+
 ## Simple Text Search Engine
 
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
