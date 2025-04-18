@@ -16,12 +16,12 @@ In order to run this text search engine we need to enter:
 ```bash
 cargo run -p app
 ```
-for first time run, this runs both the compile and runtime app on after another(where the compile generates the indexes), but after first time run we can just use:
+for first time run, this runs both the compile and runtime app on after another (where the compile generates the indexes), but after first time run we can just use this to run the runtime app:
 ```bash
 cargo run
 ```
 
-## 📦 Implementation Details
+## Implementation Details
 
 ### Resources Used
 
@@ -41,11 +41,9 @@ cargo run
 | [bincode](https://crates.io/crates/bincode)  | - For processing dataset into binary  |
 | [Ratatui](https://crates.io/crates/ratatui)  | - For augmenting UI experience |
 
----
-
 ## Problem Breakdown
 
-### SEARCH_SCOPE
+#### SEARCH_SCOPE
 
 An enum that defines the level of tokenization for searching.  
 Options:  
@@ -55,7 +53,7 @@ Options:
 **Solution**  
 To handle scope-based tokenization efficiently, we use the [Unicode Segmentation](https://crates.io/crates/unicode-segmentation) crate. It ensures proper segmentation of words and lines, respecting Unicode boundaries.
 
-### SEARCH_TYPE
+#### SEARCH_TYPE
 
 An enum that defines the type of search to be conducted.  
 Options:  
@@ -70,10 +68,10 @@ Each type of search is supported by a specialized data structure:
 - **Suffix Search** → [Suffix Tree](https://en.m.wikipedia.org/wiki/Suffix_tree)  
 - **Contains Search** → [N-gram(digrams..by default)](https://en.wikipedia.org/wiki/N-gram)
 
-## ⚙️ How It Runs
+## How It Runs
 
 1. **Build Phase:**  
-   Pre-runtime code to process and serialize the dataset into three optimized data structures (Radix Tree, Suffix Tree, N gram) using `bincode`.
+   Pre-runtime app to process and serialize the dataset into three optimized data structures (Radix Tree, Suffix Tree, N gram) using `bincode`.
 
 2. **Runtime Phase:**  
    User is prompted to select:
