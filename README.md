@@ -1,9 +1,11 @@
-https://github.com/user-attachments/assets/5a16b435-1a1a-4b00-ac32-f047820a7f12
-    <br/> prefix search
-https://github.com/user-attachments/assets/78e762c1-e159-4354-9f44-442b66cb4cca 
-    <br/> contains search
-https://github.com/user-attachments/assets/bea61304-4d66-4cf3-9790-9edc8d250ef9 
-    <br/> suffix search
+
+
+
+https://github.com/user-attachments/assets/8847f162-3583-4111-8c3b-8ab7e9220081
+
+
+
+
 
 ## Simple Text Search Engine
 
