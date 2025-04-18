@@ -3,6 +3,16 @@
 A blazing-fast, modular text search engine designed to support different search strategies (prefix, suffix, contains) and flexible tokenization scopes (word-level, line-level).  
 The engine leverages advanced data structures and popular Rust crates to efficiently index and search through large datasets — ranking results based on similarity and relevance.
 
+## Getting started
+In order to run this text search engine we need to enter:
+```bash
+cargo run -p app
+```
+for first time run, this runs both the compile and runtime app on after another (where the compile generates the indexes), but after first time run we can just use this to run the runtime app:
+```bash
+cargo run
+```
+
 ## Benchmarks
 
 ### Search Performance
@@ -39,16 +49,6 @@ All benchmarks were conducted using Criterion.rs with 100 samples per measuremen
 - **Levenshtein distance** scoring (the same as tantivy, and meilisearch)
 - Serialization of processed dataset for faster lookups at runtime  
 - A **Ratatui** TUI support for seamless interaction
-
-## Getting started
-In order to run this text search engine we need to enter:
-```bash
-cargo run -p app
-```
-for first time run, this runs both the compile and runtime app on after another (where the compile generates the indexes), but after first time run we can just use this to run the runtime app:
-```bash
-cargo run
-```
 
 ### Key Findings:
 - **Fastest Implementation**: Trie + Word search at 935.72 ns
