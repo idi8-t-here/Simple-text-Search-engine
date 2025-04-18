@@ -4,8 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-data_structs = { path = "../data_structs"}
-unicode-segmentation = "1.12.0"
-serde_json = "1.0"
-serde = "1.0"
-bincode = "2.0.1"
+unicode-segmentation = { workspace = true }
+data_structs = { workspace = true }
+serde_json = { workspace = true }
+bincode = { workspace= true }
+serde = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+
+[[bench]]
+name = "benchmark_store"
+harness = false

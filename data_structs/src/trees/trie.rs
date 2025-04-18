@@ -79,7 +79,7 @@ impl Trie {
         
         // Collect all words from this node down
         let mut results = Vec::new();
-        self.collect_words(node, &mut results);
+        self.collect_words(node, &prefix, &mut results);
         
         if results.is_empty() {
             Err("No words found".to_string())
@@ -88,17 +88,20 @@ impl Trie {
         }
     }
     
-    fn collect_words(&self, node: &Trie, results: &mut Vec<String>) {
+    fn collect_words(&self, node: &Trie, prefix: &String, results: &mut Vec<String>) {
         if node.is_terminal {
             if let Some(value) = &node.value {
                 for word in value {
-                    results.push(word.to_string());
+                    // Only add words that start with prefix but aren't equal to it
+                    if word.starts_with(prefix) && word != prefix {
+                        results.push(word.to_string());
+                    }
                 }
             }
         }
         
         for child in node.children.iter().flatten() {
-            self.collect_words(child, results);
+            self.collect_words(child, prefix, results);
         }
     }
 }
