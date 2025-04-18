@@ -1,11 +1,5 @@
 
-
-
-https://github.com/user-attachments/assets/8847f162-3583-4111-8c3b-8ab7e9220081
-
-
-
-
+![prefix(1)](https://github.com/user-attachments/assets/0c6c2cd6-4810-43cc-9eb7-cb59e6cf0183)
 
 ## Simple Text Search Engine
 
