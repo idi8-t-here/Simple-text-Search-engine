@@ -1,6 +1,8 @@
 
-![prefix(1)](https://github.com/user-attachments/assets/0c6c2cd6-4810-43cc-9eb7-cb59e6cf0183)
-![contains(1)](https://github.com/user-attachments/assets/ecad3775-f9de-4085-91e3-19ccfdd78367)
+![prefix](https://github.com/user-attachments/assets/2e29d6d3-7e60-436a-a65e-9abb734a01c9)
+
+![contains](https://github.com/user-attachments/assets/8e10360e-c4ac-49ec-b21c-c612e6a7e8b3)
+
 ![suffix](https://github.com/user-attachments/assets/c440f01b-8736-4d8a-85fd-7e2cbfe488c9)
 
 ## Simple Text Search Engine
