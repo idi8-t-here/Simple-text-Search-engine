@@ -1,21 +1,11 @@
 use bincode::{Decode, Encode};
-use std::collections::HashMap;
-use unicode_segmentation::UnicodeSegmentation;
 
-#[derive(Debug, Decode, Encode)]
+#[derive(Clone, Encode, Decode, Debug)]
 pub struct SuffixTree {
-    children: Option<HashMap<String, SuffixTree>>,
-    isterminal: bool,
-    value: String,
-    count: usize,
-    pub search_type: SearchScopeSuffix,
-    metadata: Option<HashMap<usize, String>>,
-}
-
-#[derive(Debug, Decode, Encode)]
-pub enum SearchScopeSuffix {
-    Words,
-    Lines,
+    children: [Option<Box<SuffixTree>>; 27], // 26 letters + space
+    is_terminal: bool,
+    value: Option<Vec<String>>,
+    count: u16,
 }
 
 impl Default for SuffixTree {
@@ -27,185 +17,96 @@ impl Default for SuffixTree {
 impl SuffixTree {
     pub fn new() -> Self {
         Self {
+            children: std::array::from_fn(|_| None),
+            is_terminal: false,
+            value: None,
             count: 0,
-            children: None,
-            value: "root".to_string(),
-            isterminal: false,
-            search_type: SearchScopeSuffix::Words,
-            metadata: Some(HashMap::new()),
         }
     }
 
-    pub fn store(&mut self, key: Vec<&str>) {
-        let node = self;
-        node.count += 1;
+    pub fn store(&mut self, key: String) {
+        let mut node = self;
+        let mut value = Vec::new();
+        let key: String = key.chars().rev().collect();
 
-        match node.search_type {
-            SearchScopeSuffix::Words => {
-                for item in key.iter() {
-                    node.metadata
-                        .as_mut()
-                        .unwrap()
-                        .insert(node.count, item.to_string());
+        // Traverse the Trie for each character of the key
+        for char in key.chars() {
+            let lower = char.to_ascii_lowercase();
+            let index = match lower {
+                'a'..='z' => (lower as u8 - b'a') as usize,
+                ' ' => 26,     // Handle space characters
+                _ => continue, // Skip non-alphabetic characters
+            };
 
-                    let chars: Vec<char> = item.chars().collect();
-                    for i in 0..chars.len() {
-                        let suffix: String = chars[i..].iter().collect();
-                        let formatted = format!("${}", node.count);
-                        let full_suffix = suffix + &formatted;
-
-                        node.children.get_or_insert(HashMap::new());
-                        let children = node.children.as_mut().unwrap();
-
-                        // Make key unique using suffix, count, and current children length
-                        let unique_key = format!(
-                            "{}_{}_{}",
-                            full_suffix,
-                            node.count,
-                            children.len() // Add position to make truly unique
-                        );
-
-                        children.insert(
-                            unique_key,
-                            SuffixTree {
-                                children: None,
-                                count: node.count,
-                                isterminal: true,
-                                value: full_suffix,
-                                metadata: None,
-                                search_type: SearchScopeSuffix::Words,
-                            },
-                        );
-                    }
-                }
+            // If the node for this character doesn't exist, create a new one
+            if node.children[index].is_none() {
+                node.children[index] = Some(Box::new(SuffixTree::new()));
             }
 
-            SearchScopeSuffix::Lines => {
-                let first = key.first().unwrap();
-                node.metadata
-                    .as_mut()
-                    .unwrap()
-                    .insert(node.count, first.to_string());
+            // Move to the next node in the Trie
+            node = node.children[index].as_mut().unwrap();
+        }
 
-                let words: Vec<&str> = first.unicode_words().collect();
-                let formatted = format!("${}", node.count);
-
-                for i in 0..=words.len() {
-                    let suffix = words[i..].join(" ") + &formatted;
-                    node.children.get_or_insert(HashMap::new());
-
-                    let children = node.children.as_mut().unwrap();
-
-                    if let Some(child) = children
-                        .get_mut(&suffix.split_whitespace().next().unwrap_or("").to_string())
-                    {
-                        let suffix_words: Vec<&str> = suffix.split_whitespace().collect();
-                        let child_words: Vec<&str> = child.value.split_whitespace().collect();
-
-                        let common_words: Vec<&str> = suffix_words
-                            .iter()
-                            .zip(child_words.iter())
-                            .take_while(|(a, b)| a == b)
-                            .map(|(w, _)| *w)
-                            .collect();
-
-                        if !common_words.is_empty() {
-                            let common_prefix = common_words.join(" ");
-                            let suffix_remaining = suffix[common_prefix.len()..].trim().to_string();
-                            let child_remaining =
-                                child.value[common_prefix.len()..].trim().to_string();
-
-                            child.value = common_prefix;
-                            child.children.get_or_insert(HashMap::new());
-                            let child_children = child.children.as_mut().unwrap();
-
-                            if !suffix_remaining.is_empty() {
-                                child_children.insert(
-                                    suffix_remaining
-                                        .split_whitespace()
-                                        .next()
-                                        .unwrap_or("")
-                                        .to_string(),
-                                    SuffixTree {
-                                        children: None,
-                                        count: node.count,
-                                        isterminal: true,
-                                        metadata: None,
-                                        value: suffix_remaining,
-                                        search_type: SearchScopeSuffix::Lines,
-                                    },
-                                );
-                            }
-
-                            if !child_remaining.is_empty() {
-                                child_children.insert(
-                                    child_remaining
-                                        .split_whitespace()
-                                        .next()
-                                        .unwrap_or("")
-                                        .to_string(),
-                                    SuffixTree {
-                                        children: None,
-                                        isterminal: true,
-                                        metadata: None,
-                                        count: node.count - 1,
-                                        value: child_remaining,
-                                        search_type: SearchScopeSuffix::Lines,
-                                    },
-                                );
-                            }
-
-                            child.isterminal = false;
-                        }
-                    } else {
-                        children.insert(
-                            suffix.split_whitespace().next().unwrap_or("").to_string(),
-                            SuffixTree {
-                                children: None,
-                                count: node.count,
-                                isterminal: true,
-                                metadata: None,
-                                value: suffix,
-                                search_type: SearchScopeSuffix::Lines,
-                            },
-                        );
-                    }
-                }
+        // When we've traversed all characters, mark this as a terminal node
+        if node.is_terminal {
+            // Word already exists, just increment count
+            match &mut node.value {
+                Some(x) => x.push(key),
+                None => panic!("Should be a value already"),
             }
+            node.count += 1;
+        } else {
+            // Word does not exist, store it as a new terminal node
+            value.push(key);
+            node.is_terminal = true;
+            node.value = Some(value);
+            node.count = 1; // Start the count for this word at 1
         }
     }
 
-    pub fn search(&self, key: &str) -> Result<Vec<&str>, &str> {
-        let node = self;
+    pub fn search(&self, suffix: String) -> Result<Vec<String>, String> {
+        let mut node = self;
+        let suffix: String = suffix.chars().rev().collect(); // Reverse the suffix
+
+        // Traverse to the end of the suffix
+        for char in suffix.chars() {
+            let index = if char == ' ' {
+                26
+            } else {
+                (char as u8 - b'a') as usize
+            };
+
+            if node.children[index].is_none() {
+                return Err(format!("No words with suffix '{}'", suffix));
+            }
+            node = node.children[index].as_ref().unwrap();
+        }
+
+        // Collect all words from this node down
         let mut results = Vec::new();
-
-        if let Some(children) = &node.children {
-            for (_, child) in children.iter() {
-                // Remove the terminal marker for comparison
-                let value_without_terminal: String =
-                    child.value.chars().take_while(|&c| c != '$').collect();
-
-                // Check if this suffix ends with our key
-                if value_without_terminal.ends_with(key) {
-                    if let Some(metadata) = &node.metadata {
-                        if let Some(checking) = metadata.get(&child.count) {
-                            // Only exclude exact matches with the search key
-                            if checking != key {
-                                // Add all instances, including duplicates from different counts
-                                results.push(checking.as_str());
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        self.collect_words(node, &suffix, &mut results);
 
         if results.is_empty() {
-            Err("No results found")
+            Err("No words found".to_string())
         } else {
-            // Sort to group duplicates together (optional)
-            results.sort();
             Ok(results)
+        }
+    }
+
+    fn collect_words(&self, node: &SuffixTree, prefix: &String, results: &mut Vec<String>) {
+        if node.is_terminal {
+            if let Some(value) = &node.value {
+                for word in value {
+                    // Only add words that start with prefix but aren't equal to it
+                    if word.starts_with(prefix) && word != prefix {
+                        results.push(word.chars().rev().collect());
+                    }
+                }
+            }
+        }
+
+        for child in node.children.iter().flatten() {
+            self.collect_words(child, prefix, results);
         }
     }
 }

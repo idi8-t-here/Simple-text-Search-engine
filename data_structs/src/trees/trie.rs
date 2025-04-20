@@ -1,6 +1,6 @@
 use bincode::{Encode,Decode};
 
-#[derive(Encode, Decode, Debug)]
+#[derive(Clone, Encode, Decode, Debug)]
 pub struct Trie {
     children: [Option<Box<Trie>>; 27],  // 26 letters + space
     is_terminal: bool,

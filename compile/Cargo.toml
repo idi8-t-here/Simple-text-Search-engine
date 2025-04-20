@@ -7,6 +7,7 @@ edition = "2021"
 unicode-segmentation = { workspace = true }
 data_structs = { workspace = true }
 serde_json = { workspace = true }
+thiserror = { workspace = true }
 bincode = { workspace= true }
 serde = { workspace = true }
 

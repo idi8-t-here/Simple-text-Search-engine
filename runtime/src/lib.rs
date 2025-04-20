@@ -1,6 +1,7 @@
 use bincode::config;
+use std::collections::HashMap;
 use std::fs;
-use std::path::Path;
+use std::path::PathBuf;
 use std::sync::mpsc::Sender;
 use unicode_segmentation::UnicodeSegmentation;
 
@@ -12,13 +13,20 @@ use trees::ngram::NGramIndex;
 use trees::suffix::SuffixTree;
 use trees::trie::Trie;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Scope {
     Words,
     Lines,
 }
 
-#[derive(Debug)]
+#[derive(Clone)]
+pub enum SearchIndex {
+    Trie(Trie),
+    SuffixTree(SuffixTree),
+    NGramIndex(NGramIndex),
+}
+
+#[derive(Debug, Clone)]
 pub enum SearchType {
     Prefix,
     Suffix,
@@ -31,6 +39,7 @@ pub enum AppMessage {
 }
 
 pub fn perform_search(
+    index: &HashMap<String, SearchIndex>,
     scope: Scope,
     search_type: SearchType,
     term: &str,
@@ -49,72 +58,92 @@ pub fn perform_search(
     };
 
     let path = format!("./serialized_outputs/{}/{}", scope_path, type_path);
-    let file_path = Path::new(&path);
+    //let file_path = Path::new(&path);
 
-    debug_sender
-        .send(AppMessage::Debug(format!("Searching in file: {}", path)))
-        .unwrap();
+    if let Err(e) = debug_sender.send(AppMessage::Debug(format!("Searching in file: {}", path))) {
+        eprintln!("Failed to send debug message: {}", e);
+    }
+
     let message = match search_type {
         SearchType::Prefix => "TRIE decoded successfully".to_string(),
         SearchType::Suffix => "SUFFIX decoded successfully".to_string(),
         SearchType::Contains => "NGRAM decoded successfully".to_string(),
     };
 
-    if let Ok(contents) = fs::read(file_path) {
-        let results = match search_type {
-            SearchType::Contains => {
-                match bincode::decode_from_slice::<NGramIndex, _>(&contents, config::standard()) {
-                    Ok((tree, _)) => match tree.search(term.to_string()) {
-                        Ok(search_results) => search_results,
-                        Err(e) => {
-                            debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                            return Vec::new();
-                        }
-                    },
-                    Err(e) => {
-                        debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                        return Vec::new();
-                    }
+    let results = match search_type {
+        SearchType::Contains => match scope {
+            Scope::Words => index.get("NGramIndex_Word").and_then(|idx| {
+                if let SearchIndex::NGramIndex(ngram_index) = idx {
+                    ngram_index
+                        .search(term.to_string())
+                        .ok()
+                        .map(Some)
+                        .unwrap_or(None)
+                } else {
+                    None
                 }
-            }
-            SearchType::Suffix => {
-                match bincode::decode_from_slice::<SuffixTree, _>(&contents, config::standard()) {
-                    Ok((tree, _)) => match tree.search(term) {
-                        Ok(search_results) => {
-                            search_results.iter().map(|x| x.to_string()).collect()
-                        }
-                        Err(e) => {
-                            debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                            return Vec::new();
-                        }
-                    },
-                    Err(e) => {
-                        debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                        return Vec::new();
-                    }
+            }),
+            Scope::Lines => index.get("NGramIndex_Line").and_then(|idx| {
+                if let SearchIndex::NGramIndex(ngram_index) = idx {
+                    ngram_index
+                        .search(term.to_string())
+                        .ok()
+                        .map(Some)
+                        .unwrap_or(None)
+                } else {
+                    None
                 }
-            }
-            SearchType::Prefix => {
-                match bincode::decode_from_slice::<Trie, _>(&contents, config::standard()) {
-                    Ok((tree, _)) => match tree.search(term.to_string()) {
-                        Ok(search_results) => search_results,
-                        Err(e) => {
-                            debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                            return Vec::new();
-                        }
-                    },
-                    Err(e) => {
-                        debug_sender.send(AppMessage::Debug(e.to_string())).unwrap();
-                        return Vec::new();
-                    }
+            }),
+        },
+        SearchType::Suffix => match scope {
+            Scope::Words => index.get("SuffixTree_Word").and_then(|idx| {
+                if let SearchIndex::SuffixTree(suffix_tree) = idx {
+                    suffix_tree
+                        .search(term.to_string())
+                        .ok()
+                        .map(Some)
+                        .unwrap_or(None)
+                } else {
+                    None
                 }
-            }
-        };
+            }),
+            Scope::Lines => index.get("SuffixTree_Line").and_then(|idx| {
+                if let SearchIndex::SuffixTree(suffix_tree) = idx {
+                    suffix_tree
+                        .search(term.to_string())
+                        .ok()
+                        .map(Some)
+                        .unwrap_or(None)
+                } else {
+                    None
+                }
+            }),
+        },
+        SearchType::Prefix => match scope {
+            Scope::Words => index.get("Trie_Word").and_then(|idx| {
+                if let SearchIndex::Trie(trie) = idx {
+                    trie.search(term.to_string()).ok().map(Some).unwrap_or(None)
+                } else {
+                    None
+                }
+            }),
+            Scope::Lines => index.get("Trie_Line").and_then(|idx| {
+                if let SearchIndex::Trie(trie) = idx {
+                    trie.search(term.to_string()).ok().map(Some).unwrap_or(None)
+                } else {
+                    None
+                }
+            }),
+        },
+    };
 
-        debug_sender
-            .send(AppMessage::Debug("File read successfully".to_string()))
-            .unwrap();
-        debug_sender.send(AppMessage::Debug(message)).unwrap();
+    if let Some(results) = results {
+        if let Err(e) = debug_sender.send(AppMessage::Debug("File read successfully".to_string())) {
+            eprintln!("Failed to send debug message: {}", e);
+        }
+        if let Err(e) = debug_sender.send(AppMessage::Debug(message)) {
+            eprintln!("Failed to send debug message: {}", e);
+        }
 
         for item in results.iter() {
             if matches!(scope, Scope::Lines) {
@@ -140,13 +169,71 @@ pub fn perform_search(
                 sorted_result.push((priority as u8, item.to_string()));
             }
         }
-    } else {
-        debug_sender
-            .send(AppMessage::Debug("Failed to read file".to_string()))
-            .unwrap();
     }
 
     sorted_result.sort();
     sorted_result.truncate(100);
     sorted_result
+}
+
+pub fn load_index() -> Result<HashMap<String, SearchIndex>, String> {
+    let base_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent() // go one directory up
+        .ok_or("Failed to determine project root")?
+        .to_path_buf();
+
+    let paths = [
+        ("Trie_Word", "serialized_outputs/word_scope/trie-serial.bin"),
+        (
+            "SuffixTree_Word",
+            "serialized_outputs/word_scope/suffix-serial.bin",
+        ),
+        (
+            "NGramIndex_Word",
+            "serialized_outputs/word_scope/ngram-serial.bin",
+        ),
+        ("Trie_Line", "serialized_outputs/line_scope/trie-serial.bin"),
+        (
+            "SuffixTree_Line",
+            "serialized_outputs/line_scope/suffix-serial.bin",
+        ),
+        (
+            "NGramIndex_Line",
+            "serialized_outputs/line_scope/ngram-serial.bin",
+        ),
+    ];
+
+    let mut result = HashMap::new();
+
+    for (key, relative_path) in paths.iter() {
+        let full_path = base_path.join(relative_path);
+        let contents =
+            fs::read(&full_path).map_err(|_| format!("Failed to read file: {:?}", full_path))?;
+        let decoded: SearchIndex = match *key {
+            "Trie_Word" | "Trie_Line" => {
+                let trie: Trie = bincode::decode_from_slice(&contents, config::standard())
+                    .map_err(|_| format!("Failed to decode trie: {:?}", full_path))?
+                    .0;
+                SearchIndex::Trie(trie)
+            }
+            "SuffixTree_Word" | "SuffixTree_Line" => {
+                let suffix_tree: SuffixTree =
+                    bincode::decode_from_slice(&contents, config::standard())
+                        .map_err(|_| format!("Failed to decode suffix tree: {:?}", full_path))?
+                        .0;
+                SearchIndex::SuffixTree(suffix_tree)
+            }
+            "NGramIndex_Word" | "NGramIndex_Line" => {
+                let ngram_index: NGramIndex =
+                    bincode::decode_from_slice(&contents, config::standard())
+                        .map_err(|_| format!("Failed to decode ngram: {:?}", full_path))?
+                        .0;
+                SearchIndex::NGramIndex(ngram_index)
+            }
+            _ => return Err(format!("Unknown key: {}", key)),
+        };
+        result.insert(key.to_string(), decoded);
+    }
+
+    Ok(result)
 }

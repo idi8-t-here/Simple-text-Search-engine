@@ -3,7 +3,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
-use std::sync::mpsc::{channel, Receiver, Sender};
+use std::{collections::HashMap, sync::mpsc::{channel, Receiver, Sender}};
 use std::{
     error::Error,
     io::{self, Stdout},
@@ -19,7 +19,7 @@ use tui::{
     Frame, Terminal,
 };
 
-use runtime::{perform_search, SearchType, Scope, AppMessage};  // Import from our lib
+use runtime::{load_index, perform_search, AppMessage, Scope, SearchIndex, SearchType};  // Import from our lib
 
 struct App {
     input_scope: String,
@@ -36,6 +36,7 @@ struct App {
     loading_start_time: Option<Instant>,
     sender: Sender<AppMessage>,
     receiver: Receiver<AppMessage>,
+    indexes: HashMap<String, SearchIndex>, // Add indexes to the App struct
 }
 
 enum AppState {
@@ -46,7 +47,7 @@ enum AppState {
 }
 
 impl App {
-    fn new() -> Self {
+    fn new(indexes: HashMap<String, SearchIndex>) -> Self { // Accept indexes as a parameter
         let (sender, receiver) = channel();
         Self {
             input_scope: String::new(),
@@ -71,7 +72,21 @@ impl App {
             loading_start_time: None,
             sender,
             receiver,
+            indexes, // Initialize indexes
         }
+    }
+
+    fn reset(&mut self) {
+        self.input_scope.clear();
+        self.input_type.clear();
+        self.input_term.clear();
+        self.results.clear();
+        self.result_state.select(Some(0));
+        self.state = AppState::ScopeInput;
+        self.status_message = None;
+        self.is_loading = false;
+        self.loading_start_time = None;
+        self.add_debug_message("Application reset for a new search".to_string());
     }
 
     fn add_debug_message(&mut self, message: String) {
@@ -87,8 +102,12 @@ impl App {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
+    let start_time = Instant::now();
+    let indexes = load_index().unwrap(); // Load indexes before starting the TUI
+    let duration = start_time.elapsed();
+    println!("time took to load all indexes {:?}",duration);
     let mut terminal = setup_terminal()?;
-    let result = run_app(&mut terminal);
+    let result = run_app(&mut terminal, indexes);
     restore_terminal(&mut terminal)?;
     result
 }
@@ -111,8 +130,8 @@ fn restore_terminal(
     Ok(())
 }
 
-fn run_app(terminal: &mut Terminal<CrosstermBackend<Stdout>>) -> Result<(), Box<dyn Error>> {
-    let mut app = App::new();
+fn run_app(terminal: &mut Terminal<CrosstermBackend<Stdout>>, indexes: HashMap<String, SearchIndex>) -> Result<(), Box<dyn Error>> {
+    let mut app = App::new(indexes); // Pass indexes to the App
     app.add_debug_message("Application started".to_string());
 
     loop {
@@ -146,6 +165,9 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<Stdout>>) -> Result<(), Box<
                     KeyCode::Char('c') if key.modifiers == KeyModifiers::CONTROL => {
                         app.add_debug_message("Exiting application".to_string());
                         break;
+                    }
+                    KeyCode::Char('n') if key.modifiers == KeyModifiers::CONTROL => {
+                        app.reset();
                     }
                     KeyCode::Esc => {
                         app.add_debug_message("Status message cleared".to_string());
@@ -449,16 +471,16 @@ fn handle_term_input(app: &mut App, key: KeyEvent) {
     match key.code {
         KeyCode::Enter => {
             if !app.input_term.trim().is_empty() {
-                app.add_debug_message(format!(
-                    "Searching for term: \x1b[1m{}\x1b[0m",
-                    app.input_term.trim()
-                ));
-
-                // Set loading state and clear results
+                // Set loading state and clear results immediately
                 app.is_loading = true;
                 app.loading_start_time = Some(Instant::now());
                 app.results.clear();
                 app.state = AppState::ShowResults;
+
+                app.add_debug_message(format!(
+                    "Searching for term: \x1b[1m{}\x1b[0m",
+                    app.input_term.trim()
+                ));
 
                 let scope = match app.input_scope.trim() {
                     "1" => Scope::Words,
@@ -479,12 +501,13 @@ fn handle_term_input(app: &mut App, key: KeyEvent) {
                 let search_type_clone = search_type;
                 let app_sender = app.sender.clone();
                 let debug_sender = app.sender.clone();
+                let indexes = app.indexes.clone(); // Use preloaded indexes
                 let start_time = Instant::now();
 
                 // Perform search in a separate thread
                 std::thread::spawn(move || {
                     let results =
-                        perform_search(scope_clone, search_type_clone, &term, debug_sender);
+                        perform_search(&indexes, scope_clone, search_type_clone, &term, debug_sender);
                     let duration = start_time.elapsed();
                     app_sender
                         .send(AppMessage::SearchComplete(results, duration))

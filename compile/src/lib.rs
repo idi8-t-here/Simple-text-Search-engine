@@ -8,8 +8,11 @@ use unicode_segmentation::UnicodeSegmentation;
 
 use data_structs::trees;
 use trees::ngram::{NGramIndex, SearchScopeNgram};
-use trees::suffix::{SearchScopeSuffix, SuffixTree};
+use trees::suffix::SuffixTree;
 use trees::trie::Trie;
+
+//mod error;
+//use error::Errors;
 
 pub enum Trees {
     Trie,
@@ -47,14 +50,11 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
         }
         Trees::Suffix => {
             let mut suffix = SuffixTree::new();
-            if let Scope::Line = search_scope {
-                suffix.search_type = SearchScopeSuffix::Lines;
-            }
             for token in chosen_dataset.iter() {
                 if token.len() > limit {
                     continue;
                 }
-                suffix.store(vec![token]);
+                suffix.store(token.to_string());
             }
             bincode::encode_to_vec(suffix, config::standard()).unwrap()
         }

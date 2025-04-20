@@ -24,28 +24,18 @@ cargo run
 
 ### Search Performance
 
-We conducted extensive benchmarking of our search implementations against Tantivy, a popular Rust search engine. All benchmarks were performed on a dataset of 466,550 words, searching for the term "the".
+We conducted extensive benchmarking of our search implementations against Tantivy, a popular Rust search engine. All benchmarks were performed on a dataset of 466,550 words, searching for the term "me".
 
 #### Our Implementation
 
-| Search Type | Mean Results(min-avg-max) |
-| -------------- | --------------- |
-| Trie + Word: | ( 931.29 ns - **935.72 ns** - 940.80 ns ) (~0.94 µs) |
-| Trie + Line: | ( 963.35 ns - **967.41 ns** - 971.61 ns ) (~0.97 µs) |
-| Suffix + Word: | ( 1.0018 µs - **1.0047 µs** - 1.0077 µs ) |
-| Suffix + Line: | ( 1.0050 µs - **1.0075 µs** - 1.0100 µs )|
-|NGram + Word: |  ( 981.57 ns - **984.63 ns** - 987.78 ns ) (~0.98 µs)|
-|NGram + Line: | ( 1.0078 µs - **1.0101 µs** - 1.0126 µs )|
-
-#### Tantivy
-
-| Search Type | Mean Results(min-avg-max) |
-| -------------- | --------------- |
-| Term - Search: | ( 18.833 µs - **18.877 µs** - 18.959 µs )  |
-
-Our specialized search implementations consistently outperform Tantivy by a significant margin, being approximately 19x faster. That nice but it's important to ...
- 
-**NOTE.** <br/>While our implementation shows superior performance for this specific use case, Tantivy is a full-featured search engine with additional capabilities beyond simple term searching. These benchmarks focus solely on search speed for single-term queries.
+| Search Type | Mean Results(min-avg-max) | Amount Matched (Before Truncating to top 100) |
+| -------------- | --------------- |---|
+| Trie + Word: | ( 819.85 ns - **820.58 ns** - 821.33 ns ) | 3970 |
+| Trie + Line: | ( 934.21 ns - **935.14 ns** - 936.26 ns ) | 3 |
+| Suffix + Word: | ( 439.63 µs - **440.26 µs** - 440.89 µs ) | 1926 |
+| Suffix + Line: | ( 365.22 µs - **366.21 µs** - 367.39 µs )| 4 |
+|NGram + Word: |  ( 4.5363 ms - **4.5548 ms** - 4.5745 ms ) | 14358 |
+|NGram + Line: | ( [85.216 µs - **85.644 µs** - 86.327 µs )| 15 |
 
 All benchmarks were conducted using Criterion.rs with 100 samples per measurement, including warm-up periods and statistical analysis for reliable results.
 
@@ -70,7 +60,7 @@ All benchmarks were conducted using Criterion.rs with 100 samples per measuremen
 | List of resources we will use | Why? |
 | ------------- | ---|
 | [Trie tree wiki](https://en.wikipedia.org/wiki/Trie) | - For PREFIX_SEARCH Implemetation  |
-| [Suffix tree wiki](https://en.m.wikipedia.org/wiki/Suffix_tree) | - For SUFFIX_SEARCH Implemetation |
+| [Trie tree wiki](https://en.wikipedia.org/wiki/Trie) (Reverse String Matching) | - For SUFFIX_SEARCH Implemetation |
 | [N-gram wiki](https://en.wikipedia.org/wiki/N-gram) | - For CONTAINS_SEARCH Implemetation |
 
 ### Crates Used
@@ -106,8 +96,8 @@ Options:
 **Solution**  
 Each type of search is supported by a specialized data structure:
 
-- **Prefix Search** → [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)  
-- **Suffix Search** → [Suffix Tree](https://en.m.wikipedia.org/wiki/Suffix_tree)  
+- **Prefix Search** → [Trie tree wiki](https://en.wikipedia.org/wiki/Trie)  
+- **Suffix Search** → [Trie tree wiki](https://en.wikipedia.org/wiki/Trie) (Reverse String Matching) 
 - **Contains Search** → [N-gram(digrams..by default)](https://en.wikipedia.org/wiki/N-gram)
 
 ## How It Runs

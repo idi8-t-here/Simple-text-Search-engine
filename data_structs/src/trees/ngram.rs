@@ -2,7 +2,7 @@ use std::{cmp::Ordering,collections::{HashMap, HashSet}};
 use unicode_segmentation::UnicodeSegmentation;
 use bincode::{Encode,Decode};
 
-#[derive(Encode, Decode, Debug)]
+#[derive(Encode, Decode, Debug, Clone)]
 pub struct NGramIndex {
     grams: Option<HashMap<Vec<String>, Vec<usize>>>,
     words: Option<Vec<String>>,
@@ -10,7 +10,7 @@ pub struct NGramIndex {
     pub search_type: SearchScopeNgram,
 }
 
-#[derive(Encode, Decode, Debug)]
+#[derive(Encode, Decode, Debug, Clone)]
 pub enum SearchScopeNgram {
     Words,
     Lines,
