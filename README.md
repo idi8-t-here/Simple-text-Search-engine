@@ -1,9 +1,7 @@
-https://github.com/user-attachments/assets/f93d5c36-077f-4386-bafc-4134a946df2e 
-    prefix search
-https://github.com/user-attachments/assets/78e762c1-e159-4354-9f44-442b66cb4cca 
-    contains search
-https://github.com/user-attachments/assets/bea61304-4d66-4cf3-9790-9edc8d250ef9 
-    suffix search
+
+![prefix-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a6a7d066-4062-4361-a50e-fc0494483c30)
+![contains-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1e6b49b0-965d-494c-beae-ccd7076a32fb)
+![suffix-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/c95d0f33-3c62-4b58-92a6-2a03cda75b52)
 
 ## Simple Text Search Engine
 
