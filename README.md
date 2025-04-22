@@ -33,7 +33,7 @@ We conducted extensive benchmarking of our search implementations against Tantiv
 | Suffix + Word: | ( 439.63 µs - **440.26 µs** - 440.89 µs ) | 1926 |
 | Suffix + Line: | ( 365.22 µs - **366.21 µs** - 367.39 µs )| 4 |
 |NGram + Word: |  ( 4.5363 ms - **4.5548 ms** - 4.5745 ms ) | 14358 |
-|NGram + Line: | ( [85.216 µs - **85.644 µs** - 86.327 µs )| 15 |
+|NGram + Line: | ( 85.216 µs - **85.644 µs** - 86.327 µs )| 15 |
 
 All benchmarks were conducted using Criterion.rs with 100 samples per measurement, including warm-up periods and statistical analysis for reliable results.
 
