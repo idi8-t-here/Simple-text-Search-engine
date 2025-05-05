@@ -32,7 +32,7 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
         .join("Dataset/words.txt");
     let dataset = fs::read_to_string(dataset_path).unwrap();
 
-    let (chosen_dataset, limit) = match search_scope {
+    let (chosen_scope, limit) = match search_scope {
         Scope::Word => (dataset.unicode_words().collect::<Vec<&str>>(), 255),
         Scope::Line => (dataset.lines().collect::<Vec<&str>>(), 32768),
     };
@@ -40,7 +40,7 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
     let serialized_output = match trees {
         Trees::Trie => {
             let mut trie = Trie::new();
-            for token in chosen_dataset.iter() {
+            for token in chosen_scope.iter() {
                 if token.len() > limit {
                     continue;
                 }
@@ -50,7 +50,7 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
         }
         Trees::Suffix => {
             let mut suffix = SuffixTree::new();
-            for token in chosen_dataset.iter() {
+            for token in chosen_scope.iter() {
                 if token.len() > limit {
                     continue;
                 }
@@ -63,7 +63,7 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
             if let Scope::Line = search_scope {
                 ngram.search_type = SearchScopeNgram::Lines;
             }
-            for token in chosen_dataset.iter() {
+            for token in chosen_scope.iter() {
                 if token.len() > limit {
                     continue;
                 }
@@ -84,13 +84,17 @@ pub fn process_data(trees: Trees, search_scope: Scope) {
         Trees::NGramIndex => "ngram-serial.bin",
     };
 
-    let path = format!("./serialized_outputs/{}/{}", scope_path, type_path);
-    let file_path = Path::new(&path);
+    let output_path = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .join("serialized_outputs")
+        .join(scope_path)
+        .join(type_path);
 
-    if let Some(parent) = file_path.parent() {
+    if let Some(parent) = output_path.parent() {
         fs::create_dir_all(parent).unwrap();
     }
 
-    let mut serialized_file = File::create(file_path).unwrap();
+    let mut serialized_file = File::create(output_path).unwrap();
     serialized_file.write_all(&serialized_output).unwrap();
 }

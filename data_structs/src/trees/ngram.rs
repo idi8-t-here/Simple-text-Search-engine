@@ -119,9 +119,7 @@ impl NGramIndex {
                     let key_parts: Vec<&str> = key.split_whitespace().collect();
                     match key_parts.len().cmp(&ngram.gram_size) {
                         Ordering::Less => {
-                            let joined = key_in_gram.join(" ");
-                            let words: Vec<&str> = joined.split_whitespace().collect();
-                            words.iter().any(|word| word == &key)
+                            key_in_gram.iter().any(|word| word == &key)
                         },
                         Ordering::Equal => {
                             let joined = key_in_gram.join(" ");

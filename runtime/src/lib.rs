@@ -183,19 +183,23 @@ pub fn load_index() -> Result<HashMap<String, SearchIndex>, String> {
         .to_path_buf();
 
     let paths = [
-        ("Trie_Word", "serialized_outputs/word_scope/trie-serial.bin"),
+        (   "Trie_Word",
+            "serialized_outputs/word_scope/trie-serial.bin"
+        ),
+        (   "Trie_Line",
+            "serialized_outputs/line_scope/trie-serial.bin"
+        ),
         (
             "SuffixTree_Word",
             "serialized_outputs/word_scope/suffix-serial.bin",
         ),
         (
-            "NGramIndex_Word",
-            "serialized_outputs/word_scope/ngram-serial.bin",
-        ),
-        ("Trie_Line", "serialized_outputs/line_scope/trie-serial.bin"),
-        (
             "SuffixTree_Line",
             "serialized_outputs/line_scope/suffix-serial.bin",
+        ),
+        (
+            "NGramIndex_Word",
+            "serialized_outputs/word_scope/ngram-serial.bin",
         ),
         (
             "NGramIndex_Line",
